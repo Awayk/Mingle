@@ -1,5 +1,10 @@
 @extends('layouts.master')
 
+{{-- to change the standard head attributes like title use the following sytax --}}
+{{-- <head>
+  <title>Mingle Mingle Mingle</title>
+</head> --}}
+
 @section('content')
 
   <h1>Hello World</h1>
