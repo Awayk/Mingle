@@ -1,0 +1,2 @@
+[Tue Apr 24 18:25:38.197240 2018] [core:error] [pid 8892:tid 2000] (20024)The given path is misformatted or contained invalid characters: [client 127.0.0.1:59184] AH00127: Cannot map GET /.../public/css/styles.css HTTP/1.1 to file, referer: http://local.mingle.eu/
+[Tue Apr 24 18:25:42.041388 2018] [core:error] [pid 8892:tid 2000] (20024)The given path is misformatted or contained invalid characters: [client 127.0.0.1:59184] AH00127: Cannot map GET /.../public/css/styles.css HTTP/1.1 to file, referer: http://local.mingle.eu/
