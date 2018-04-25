@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/organizations', function () {
+    return view('organizations.show');
+});
+
+Route::get('/organizations/{id}', function ($id) {
+
+  
+    return view('organizations.show');
+});
