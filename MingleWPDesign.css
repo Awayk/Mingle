@@ -1,0 +1,45 @@
+
+body {
+  background-color: white;
+  font-family: Montserrat Light, sans-serif;
+  position: relative;
+}
+
+#outerNavbar {
+  background-color: rgb(16,54,91);
+}
+
+#navBar {
+  background: transparent;
+  font-size: 14pt;
+  color: white;
+  border: none;
+}
+
+.nav-link {
+  color: white;
+}
+
+#searchButton {
+background: linear-gradient(to bottom right, blue, red);
+color: white;
+border: white;
+}
+
+#topSection {
+  position: relative;
+}
+
+.carousel-caption {
+  text-align: left;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+#captionContainer {
+  vertical-align: middle;
+}
+
+.card-image-top {
+  height: 400px;
+}
