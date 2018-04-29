@@ -14,6 +14,11 @@ body {
   font-size: 14pt;
   color: white;
   border: none;
+
+}
+
+.nav-link:hover {
+  color: gray;
 }
 
 .nav-link {
@@ -21,9 +26,10 @@ body {
 }
 
 #searchButton {
-background: linear-gradient(to bottom right, blue, red);
-color: white;
-border: white;
+  background-color: gray;
+  /* background: linear-gradient(to bottom right, blue, red); */
+  color: white;
+  border: white;
 }
 
 #topSection {
@@ -40,6 +46,11 @@ border: white;
   vertical-align: middle;
 }
 
+.card {
+  width: 700px;
+}
+
 .card-image-top {
-  height: 400px;
+height: 300px;
+width: 300px;
 }
