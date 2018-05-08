@@ -6,24 +6,42 @@ body {
 }
 
 #outerNavbar {
+  background: transparent;
+}
+
+#navBar {
+  background: transparent;
+  font-size: 14pt;
+  border: none;
+}
+
+#navBar .nav-link {
+  color: white;
+}
+
+#navBar .nav-link:hover {
+  color: gray;
+}
+
+#outerNavbar.scrolled {
   background-color: white;
   border-bottom: 2px solid rgb(16,54,91);
   color: rgb(99, 99, 99);
 }
 
-#navBar {
+#navBar.scrolled {
   background: transparent;
   font-size: 14pt;
   color: rgb(97, 97, 97);
   border: none;
 }
 
-.nav-link:hover {
-  color: gray;
+#navBar.scrolled .nav-link {
+  color: rgb(101, 101, 101);
 }
 
-.nav-link {
-  color: rgb(101, 101, 101);
+#navBar.scrolled .nav-link:hover {
+  color: black;
 }
 
 #searchButton {
