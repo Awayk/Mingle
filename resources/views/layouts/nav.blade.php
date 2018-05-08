@@ -1,17 +1,17 @@
   <!-- Navigation Bar -->
-  <div class="container-fluid" id="outerNavbar">
+  <div class="container-fluid fixed-top" id="outerNavbar">
     <div class="container">
       <nav class="navbar navbar-expand py-0" id="navBar">
-        <a class="navbar-brand" href="#"><img class="img-responsive" width="45" height="40" src="{{asset('img/MLetterLogo.png')}}" alt="Mingle"></a>
+        <a class="navbar-brand" href="/"><img class="img-responsive" width="45" height="40" src="{{asset('img/MLetterLogo.png')}}" alt="Mingle"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a></li>
+            <li class="nav-item active"><a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a></li>
             <li class="nav-item"> <a class="nav-link" href="#">Activities</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Organizations<span class="caret"></span></a>
               <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                <a class="dropdown-item" href="#">Organization 1</a>
+                <a class="dropdown-item" href="/organizations/silbernetz">Silbernetz</a>
                 <a class="dropdown-item" href="#">Organization 2</a>
                 <a class="dropdown-item" href="#">Organization 3</a>
                 <a class="dropdown-item" href="#">Organization 4</a>
