@@ -6,15 +6,16 @@ body {
 }
 
 #outerNavbar {
-  background-color: rgb(16,54,91);
+  background-color: white;
+  border-bottom: 2px solid rgb(16,54,91);
+  color: rgb(99, 99, 99);
 }
 
 #navBar {
   background: transparent;
   font-size: 14pt;
-  color: white;
+  color: rgb(97, 97, 97);
   border: none;
-
 }
 
 .nav-link:hover {
@@ -22,7 +23,7 @@ body {
 }
 
 .nav-link {
-  color: white;
+  color: rgb(101, 101, 101);
 }
 
 #searchButton {
@@ -38,12 +39,22 @@ body {
 
 .carousel-caption {
   text-align: left;
+  right: auto;
+  left: 6%;
   top:50%;
   transform: translateY(-50%);
 }
 
 #captionContainer {
   vertical-align: middle;
+}
+
+#section3 {
+  background-color: rgb(236, 236, 236);
+}
+
+#section3Header {
+
 }
 
 .card {
