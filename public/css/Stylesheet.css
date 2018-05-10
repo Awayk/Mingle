@@ -1,11 +1,25 @@
+/*
+ temporary? adjustments for example pages
+*/
 .sectionContent {
   padding-top: 2em;
   padding-bottom: 1em;
 }
 
-#headImage {
-
+#footer {
+  background-color: white;
+  border-top: 2px solid rgb(16,54,91);
+  padding-top: 2em;
+  color: rgb(99, 99, 99);
 }
+#footer a {
+  color: rgb(101, 101, 101);
+}
+
+/*
+  FYN'S WIP
+*/
+
 body {
   background-color: white;
   font-family: Montserrat Light, sans-serif;
