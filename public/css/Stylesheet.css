@@ -16,16 +16,19 @@
   color: rgb(101, 101, 101);
 }
 
-/*
-  FYN'S WIP
-*/
+/* Complete Stylesheet for Home Page (Bootstrap Code) */
 
+
+/* General Body Design */
 body {
   background-color: white;
   font-family: Montserrat Light, sans-serif;
   position: relative;
 }
 
+
+
+/* Initial Navbar Design */
 #outerNavbar {
   background: transparent;
 }
@@ -44,33 +47,46 @@ body {
   color: gray;
 }
 
+#searchButton {
+  background-color: transparent;
+  border: 1px solid white;
+  /* background: linear-gradient(to bottom right, blue, red); */
+  color: white;
+}
+
+
+
+
+/* Scrolled Navbar Design */
 #outerNavbar.scrolled {
   background-color: white;
-  border-bottom: 2px solid rgb(16,54,91);
-  color: rgb(99, 99, 99);
+  border-bottom: 1pt solid rgb(16,54,91);
+  color: rgb(100, 100, 100);
 }
 
 #navBar.scrolled {
   background: transparent;
   font-size: 14pt;
-  color: rgb(97, 97, 97);
+  color: rgb(100, 100, 100);
   border: none;
 }
 
 #navBar.scrolled .nav-link {
-  color: rgb(101, 101, 101);
+  color: rgb(100, 100, 100);
 }
 
 #navBar.scrolled .nav-link:hover {
   color: black;
 }
 
-#searchButton {
-  background-color: gray;
-  /* background: linear-gradient(to bottom right, blue, red); */
-  color: white;
-  border: white;
+#searchButton.scrolled {
+  color: rgb(100, 100, 100);
+  border: 1px solid rgb(100, 100, 100);
 }
+
+
+
+
 
 #section1 {
   position: relative;
@@ -92,15 +108,44 @@ body {
   background-color: rgb(236, 236, 236);
 }
 
-#section3Header {
+#section4 {
 
 }
 
-.card {
-  width: 700px;
+#readButton {
+  align-self: center;
 }
 
-.card-image-top {
-height: 300px;
-width: 300px;
+#section5 {
+  border-top: 1pt solid rgb(16,54,91);
+  background-color: rgb(70, 70, 70);
+  color: white;
+}
+
+#footerLink {
+  font-size: 11pt;
+  color: rgba(230, 230, 230, 0.9);
+}
+
+#footerDivider {
+  width: 100%;
+  border-top: 1px solid rgb(246, 246, 246);
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+#twitterLink {
+  color: #1da1f2;
+}
+
+#facebookLink {
+  color: #3b5998;
+}
+
+#instagramLink {
+  color: #833ab4;
+}
+
+#redditLink {
+  color: #ff4500;
 }
