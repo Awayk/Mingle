@@ -7,13 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!--Bootstrap integration-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <!-- Fontawesome Integration -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+  <!-- CSS Stylesheet Integration -->
   <link rel="stylesheet" type="text/css" href="Stylesheet.css">
   <title>Mingle - Fighting Loneliness</title>
 </head>
 
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation Bar including Search Form -->
   <div class="container-fluid fixed-top" id="outerNavbar">
     <div class="container">
       <nav class="navbar navbar-expand py-0" id="navBar">
@@ -26,7 +29,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Organizations<span class="caret"></span></a>
               <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                <a class="dropdown-item" href="#">Organization 1</a>
+                <a class="dropdown-item" href="#">Silbernetz</a>
                 <a class="dropdown-item" href="#">Organization 2</a>
                 <a class="dropdown-item" href="#">Organization 3</a>
                 <a class="dropdown-item" href="#">Organization 4</a>
@@ -43,27 +46,26 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Type here ..." aria-label="Search" id="searchForm">
             <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit" id="searchButton">Search</button>
           </form>
-          <button type="button" name="contact"><span class="oi oi-person"></span></button>
         </div>
       </nav>
     </div>
   </div>
 
-  <!-- Top Section - MingleNet -->
+  <!-- Top Section - Promotion of MingleNet & Possibility to join Network -->
   <section id="section1">
     <img class="d-block w-100" src="../public/img/NetworkFitted.jpg" alt="Network" id="homeImage">
-      <div class="carousel-caption">
-        <div class="container" id="captionContainer">
-          <h1 class="display-4">Join MingleNet</h1>
-          <p>The world's first Network of Organizations commited to fighting Loneliness</p>
-          <button class="btn btn-light btn-outline-light" type="button" name="button">Become Part of it!</button>
-        </div>
+    <div class="carousel-caption">
+      <div class="container" id="captionContainer">
+        <h1 class="display-4">Join MingleNet</h1>
+        <p>The world's first Network of Organizations commited to fighting Loneliness</p>
+        <button class="btn btn-light btn-outline-light" type="button" name="button">Become Part of it!</button>
       </div>
+    </div>
   </section>
 
-  <!-- Informative Section -->
+  <!-- Informative Section - Text & Picture -->
   <section id="section2">
-    <div class="container my-5">
+    <div class="container py-5">
       <div class="row">
         <div class="col-md-7 align-self-center" id="textualColumn">
           <h4 class="mb-4">Collaboration is Necessary - Now More Than Ever</h4>
@@ -75,55 +77,107 @@
         </div>
       </div>
     </div>
-    </div>
+  </section>
+
+  <!-- Informative Section 2 - Text & Picture-->
+  <section id="section3">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-5">
+          <img class="d-block w-100 rounded" src="../public/img/LongRoad.jpg" alt="Office Desk">
+        </div>
+        <div class="col-md-7 pl-5 align-self-center" id="textualColumn">
+          <h4 class="mb-4">A Long Road - But We are Prepared to Take it on</h4>
+          <p>In a world subject to rapid changes with thousands of possibilities<br>for people to connect, loneliness is a greater problem than suspected.</p>
+          <p>We as organizations and communities need to work together closely<br>in order to assist in matters like this.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-
-  <!-- Middle Section - Cards against Loneliness -->
-  <section id="section3">
+  <!-- Lower Section - Info Cards -->
+  <section id="section4">
     <div class="container">
-      <h1 id="section2Header" class="text-center pt-3">Headline</h1>
-      <div class="card-deck">
+      <div class="card-deck py-5">
         <div class="card rounded">
-          <img class="card-image-top w-100 d-block rounded-top" src="../public/img/Waterglass.jpg" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Providing a Platform</h4>
-            <p class="card-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            <div class="card-footer">
-              <small class="text-muted">Further Information: ...</small>
-            </div>
+          <img class="card-image-top img-fluid w-100 rounded-top" src="../public/img/Waterglass.jpg" alt="">
+          <div class="card-body text-center">
+            <h5 class="card-title">Providing a Platform</h5>
+            <p class="card-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <button id="readButton" class="btn btn-sm btn-disabled mb-2" type="button">Read more</button>
           </div>
         </div>
         <div class="card rounded">
-          <img class="card-image-top w-100 d-block rounded-top" src="../public/img/StayStrong.jpg" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Connecting Individuals</h4>
-            <p class="card-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            <div class="card-footer">
-              <small class="text-muted">Further Information: ...</small>
-            </div>
+          <img class="card-image-top img-fluid h-50 w-100 rounded-top" src="../public/img/StayStrong.jpg" alt="">
+          <div class="card-body text-center">
+            <h5 class="card-title">Connecting Individuals</h5>
+            <p class="card-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <button id="readButton" class="btn btn-sm btn-disabled mb-2" type="button">Read more</button>
           </div>
         </div>
         <div class="card rounded">
-          <img class="card-image-top w-100 d-block rounded-top" src="../public/img/Globe.jpg" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Informing People</h4>
-            <p class="card-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            <div class="card-footer">
-              <small class="text-muted">Further Information: ...</small>
-            </div>
+          <img class="card-image-top img-fluid w-100 rounded-top" src="../public/img/Globe.jpg" alt="">
+          <div class="card-body text-center">
+            <h5 class="card-title">Informing People</h5>
+            <p class="card-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <button id="readButton" class="btn btn-sm btn-disabled mb-2" type="button">Read more</button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+<!-- Last Section - Footer -->
+<section id="section5">
+  <div class="container-fluid mt-3">
+    <div class="row justify-content-md-center">
+      <div class="col-sm-3">
+        <ul>
+          <h6>Support</h6>
+          <hr id="footerDivider">
+          <a href="#" id="footerLink">Chat</a><br>
+          <a href="#" id="footerLink">Contact</a><br>
+          <a href="#" id="footerLink">FAQ</a><br>
+          <a href="#" id="footerLink">Forum</a>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <ul>
+          <h6>About</h6>
+          <hr id="footerDivider">
+          <a href="#" id="footerLink">Impressum</a><br>
+          <a href="#" id="footerLink">Directions</a><br>
+          <a href="#" id="footerLink">Legal</a>
+        </ul>
+      </div>
+    <div class="col-sm-3">
+      <!-- <ul> -->
+      <!-- <h6>Social Media</h6> -->
+      <!-- <hr id="footerDivider"> -->
+      <div class="row">
+        <div class="col-md-2">
+          <span class="fab fa-twitter fa-3x"></span>
+        </div>
+        <div class="col-md-2">
+          <span class="fab fa-facebook fa-3x"></span>
+        </div>
+        <div class="col-md-2">
+          <span class="fab fa-instagram fa-3x"></span>
+        </div>
+        <div class="col-md-2">
+          <span class="fab fa-reddit-square fa-3x"></span>
+        </div>
+      </div>
+      <!-- <a href="#" class="mb-3" id="footerLink"><span class="fab fa-twitter fa-lg mr-2" id="twitterLink"></span>Twitter</a><br> -->
+      <!-- <a href="#" class="mb-3" id="footerLink"><span class="fab fa-facebook fa-lg mr-2" id="facebookLink"></span>Facebook</a><br> -->
+      <!-- <a href="#" class="mb-3" id="footerLink"><span class="fab fa-instagram fa-lg mr-2" id="instagramLink"></span>Instagram</a><br> -->
+      <!-- <a href="#" class="mb-3" id="footerLink"><span class="fab fa-reddit-square fa-lg mr-2" id="redditLink"></span>Reddit</a> -->
+      <!-- </ul> -->
+    </div>
+  </div>
 
-
+  </div>
+</section>
 
 
 
