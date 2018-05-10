@@ -5,22 +5,22 @@
 
   <!-- Top Section - MingleNet -->
   <section id="section1">
-    <img class="d-block w-100" src="/img/NetworkFitted.jpg" alt="Network" id="homeImage">
+    <img class="d-block w-100" src="{!! asset('/img/sunsetLonelyTreeFittedMirror.jpg') !!}" alt="Network" id="headImage">
     <div class="carousel-caption">
-      <div class="container" id="captionContainer">
+      <div class="container float-right" id="captionContainer">
         <h1 class="display-4">Silbernetz</h1>
         <p>The network for lonely and isolated senior people</p>
         <p>Help-telphone, friendly turns, access point for local activities</p>
 
-        {{-- <button class="btn btn-light btn-outline-light" type="button" name="button">Become Part of it!</button> --}}
+        <button class="btn btn-light btn-outline-light" type="button" name="button">Donate</button>
       </div>
     </div>
   </section>
 
 {{-- general information --}}
-  <section id="section2">
+  <section id="section2" class="sectionContent">
     {{-- <div class="container-fluid my-5"> --}}
-      <div class="jumbotron jumbotron-fluid">
+      {{-- <div class="jumbotron jumbotron-fluid"> --}}
         <div class="container">
           <h2 class="display-4">General Information</h2>
           <table class="table table-striped">
@@ -50,15 +50,14 @@
             </tbody>
           </table>
         </div>
-      </div>
-
-
+      {{-- </div> --}}
     {{-- </div> --}}
   </section>
 
-  <section class="section3">
+  <section id="section3" class="sectionContent">
     <div class="container">
       <h2 class="text-center">Services</h2>
+      <hr>
 
       <div class="row">
 
@@ -98,11 +97,47 @@
         </div>
 
       </div>
+    </div>
+  </section><!-- Ende section 3-->
+
+  <section id="section4" style="background-color: rgb(249, 206, 173)" class="sectionContent">
+    <div class="container">
+      <h2 class="text-center">Sponsors</h2>
+      <hr>
+
+
+        <p>We would like to thank all of our sponsors, private, corporate or governmental, for their ongoing support</p>
+
+        <h3>Our top Sponsors</h3>
+        <hr>
+        <div class="row text-center">
+          <figure class="figure col-md-2">
+              <img src="{{asset('img/icons/full-color/helicopter.png')}}" class="figure-img img-fluid" alt="Helicopter Example Company">
+              <figcaption class="fiure-caption">Helicopter Example Company</figcaption>
+          </figure>
+          <figure class="figure col-md-2">
+              <img src="{{asset('img/icons/full-color/shipwheel.png')}}" class="figure-img img-fluid" alt="Nautics Social Responsibility">
+              <figcaption class="fiure-caption">Nautics Social Responsibility</figcaption>
+          </figure>
+          <figure class="figure col-md-2">
+              <img src="{{asset('img/icons/full-color/briefcase.png')}}" class="figure-img img-fluid" alt="Group of Social Advocates">
+              <figcaption class="fiure-caption">Group of Social Advocates</figcaption>
+          </figure>
+          <figure class="figure col-md-2">
+              <img src="{{asset('img/icons/full-color/profile.png')}}" class="figure-img img-fluid" alt="Our many private Donators">
+              <figcaption class="fiure-caption">Our many private Donators</figcaption>
+          </figure>
+
+        </div>
+
+        <hr>
+        <button class="btn btn-lg btn-primary" type="button" name="button">Become a Sponsor</button>
 
 
 
-    </div> <!-- Ende section 3-->
 
+
+    </div>
   </section>
 
 @endsection

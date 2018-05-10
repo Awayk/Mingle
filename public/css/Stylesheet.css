@@ -1,4 +1,11 @@
+.sectionContent {
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
 
+#headImage {
+
+}
 body {
   background-color: white;
   font-family: Montserrat Light, sans-serif;
