@@ -31,9 +31,11 @@ body {
 }
 
 #searchButton {
-  background-color: transparent;
-  border: 1px solid white;
-  /* background: linear-gradient(to bottom right, blue, red); */
+  background-color: gray;
+  color: white;
+}
+
+#navToggler {
   color: white;
 }
 
@@ -63,8 +65,13 @@ body {
 }
 
 #searchButton.scrolled {
+  background-color: transparent;
   color: rgb(100, 100, 100);
-  border: 1px solid rgb(100, 100, 100);
+  border: none;
+}
+
+#navToggler.scrolled {
+  color: rgb(100, 100, 100);
 }
 
 
@@ -73,6 +80,14 @@ body {
 
 #section1 {
   position: relative;
+}
+
+#mingleNetContainer {
+    background: url("../public/img/NetworkFitted.jpg");
+    color: white;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 120px;
 }
 
 .carousel-caption {
@@ -92,6 +107,18 @@ body {
 }
 
 #section4 {
+  background-color: rgba(16, 54, 91, 0.8);
+  color: white;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+#subscribeButton {
+  background-color: white;
+  color: black;
+}
+
+#section5 {
 
 }
 
@@ -99,7 +126,7 @@ body {
   align-self: center;
 }
 
-#section5 {
+#section6 {
   border-top: 1pt solid rgb(16,54,91);
   background-color: rgb(70, 70, 70);
   color: white;

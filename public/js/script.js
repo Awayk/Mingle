@@ -9,5 +9,7 @@ $(function () {
     $navOuter.toggleClass('scrolled', $(this).scrollTop() > $navOuter.height());
     var $search = $("#searchButton");
     $search.toggleClass('scrolled', $(this).scrollTop() > $search.height());
+    var $toggler = $("#navToggler");
+    $toggler.toggleClass('scrolled', $(this).scrollTop() > $toggler.height());
 	});
 });
