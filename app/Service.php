@@ -6,5 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
-    //
+    public function organization()
+    {
+      return $this->belongsTo(Organization::class);
+    }
+
+    public function icon()
+    {
+      return $this->belongsTo(Icon::class);
+    }
 }
