@@ -2,17 +2,20 @@
 
 @section('content')
 
+  <section id="organizationLeadSection">
+    <div class="container-fluid" id="organizationLeadContainer">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-7 align-self-center">
+            <h1 class="display-4">Silbernetz</h1>
+            <p>The network for lonely and isolated senior people</p>
+            <p>Help-telphone, friendly turns, access point for local activities</p>
 
-  <!-- Top Section - MingleNet -->
-  <section id="section1">
-    <img class="d-block w-100" src="{!! asset('/img/sunsetLonelyTreeFittedMirror.jpg') !!}" alt="Network" id="headImage">
-    <div class="carousel-caption">
-      <div class="container float-right" id="captionContainer">
-        <h1 class="display-4">Silbernetz</h1>
-        <p>The network for lonely and isolated senior people</p>
-        <p>Help-telphone, friendly turns, access point for local activities</p>
-
-        <button class="btn btn-light btn-outline-light" type="button" name="button">Donate</button>
+            <button class="btn btn-light btn-outline-light" type="button" name="button">Donate</button>
+          </div>
+          <div class="col-md-5">
+          </div>
+        </div>
       </div>
     </div>
   </section>

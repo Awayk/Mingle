@@ -17,14 +17,14 @@ Route::get('/', function () {
 
 Route::get('/organizations', 'OrganizationsController@index');
 Route::get('/organizations/create', 'OrganizationsController@create');
-// Route::get('/organizations/{organization}', 'OrganizationsController@show');
+Route::get('/organizations/{organization}', 'OrganizationsController@show');
 Route::post('/organizations', 'OrganizationsController@store');
 
 
-//hardcoded for testing
-Route::get('/organizations/silbernetz', function () {
-    return view('organizations.silbernetz');
-});
+// //hardcoded for testing
+// Route::get('/organizations/silbernetz', function () {
+//     return view('organizations.silbernetz');
+// });
 
 
 
