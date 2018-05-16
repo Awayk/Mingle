@@ -24,6 +24,23 @@
                 </div>
               </li>
               <li class="nav-item"> <a class="nav-link" href="#">About Us</a></li>
+              <li>
+                @if (Auth::guest())
+                    <a href="{{ route('login') }}">Login</a>
+                @else
+
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+
+                @endif
+              </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="search" placeholder="Type here ..." aria-label="Search" id="searchForm">

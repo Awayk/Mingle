@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function organization()
+    {
+      return $this->hasOne(Organization::class);
+    }
+
+    public function sponsors()
+    {
+      return $this->hasMany(Sponsor::class);
+    }
 }

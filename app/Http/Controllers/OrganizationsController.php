@@ -8,6 +8,12 @@ use App\Organization;
 
 class OrganizationsController extends Controller
 {
+
+      public function __construct()
+      {
+        $this->middleware('auth')->except(['index', 'show']);
+      }
+
     /**
      * Display a listing of the resource.
      *
@@ -39,9 +45,25 @@ class OrganizationsController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate(request(), [
+            'name' => 'required|string|max:255|unique:organizations',
+            'mail' => 'string|email|max:255|unique:organizations',
+        ]);
+
         Organization::create([
           'name' => request('name'),
-          'short_description' => request('short_description')
+          'lead_description' => request('lead_description'),
+          'link' => request('link'),
+          'mail' => request('mail'),
+          'telephone' => request('telephone'),
+          'location_name' => request('location_name'),
+          'zip' => request('zip'),
+          'location' => request('location'),
+          'street' => request('street'),
+          'street_number' => request('street_number'),
+          'donate_link' => request('donate_link'),
+          'user_id' => auth()->id()
         ]);
         return redirect('/organizations');
     }
