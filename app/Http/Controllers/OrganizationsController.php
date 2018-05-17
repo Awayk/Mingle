@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Gate;
 use App\Organization;
 
 class OrganizationsController extends Controller
@@ -21,8 +22,8 @@ class OrganizationsController extends Controller
      */
     public function index()
     {
-
-        return view('organizations.index');
+        $organizations = Organization::all();
+        return view('organizations.index', compact('organizations'));
     }
 
     /**
@@ -48,7 +49,7 @@ class OrganizationsController extends Controller
 
         $this->validate(request(), [
             'name' => 'required|string|max:255|unique:organizations',
-            'mail' => 'string|email|max:255|unique:organizations',
+            'mail' => 'email|max:255|unique:organizations',
         ]);
 
         Organization::create([
@@ -85,9 +86,13 @@ class OrganizationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Organization $organization)
     {
-        //
+        if (Gate::denies('edit-organization', $organization)) {
+            return redirect('/organizations/'. $organization->name);
+        }
+
+        return view('organizations.edit', compact('organization'));
     }
 
     /**

@@ -20,16 +20,16 @@
                   <a class="dropdown-item" href="#">Organization 6</a>
                   <a class="dropdown-item" href="#">Organization 7</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Show All Institutions</a>
+                  <a class="dropdown-item" href="/organizations">Show All Institutions</a>
                 </div>
               </li>
               <li class="nav-item"> <a class="nav-link" href="#">About Us</a></li>
-              <li>
+              <li class="nav-item">
                 @if (Auth::guest())
-                    <a href="{{ route('login') }}">Login</a>
+                    <a class="nav-link" href="{{ route('login') }}">Login</a>
                 @else
 
-                                <a href="{{ route('logout') }}"
+                                <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                     Logout
