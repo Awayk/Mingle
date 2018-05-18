@@ -104,7 +104,36 @@ class OrganizationsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $organization = Organization::find($id);
+
+        $this->validate(request(), [
+            'name' => 'required|string|max:255',
+            'mail' => 'email|max:255',
+        ]);
+
+        $input = $request->only('name', 'lead_description', 'link', 'mail', 'telephone', 'location_name', 'zip', 'location', 'street', 'street_number', 'donate_link');
+
+
+        $organization->update([
+          'name' => $input['name'],
+          'lead_description' => $input['lead_description'],
+          'link' => $input['link'],
+          'mail' => $input['mail'],
+          'telephone' => $input['telephone'],
+          'location_name' => $input['location_name'],
+          'zip' => $input['zip'],
+          'location' => $input['location'],
+          'street' => $input['street'],
+          'street_number' => $input['street_number'],
+          'donate_link' => $input['donate_link'],
+          'user_id' => auth()->id()
+        ]);
+
+
+        $routeName = strtolower($input['name']);
+
+        return redirect('/organizations/'.$routeName);
     }
 
     /**

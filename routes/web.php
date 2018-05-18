@@ -19,6 +19,8 @@ Route::get('/', function () {
 //CRUD routes for everything regarding the Organization
 Route::resource('organizations', 'OrganizationsController');
 
+Route::resource('organizations/{organization}/services', 'ServicesController');
+
 
 // auth Routes
 Auth::routes();

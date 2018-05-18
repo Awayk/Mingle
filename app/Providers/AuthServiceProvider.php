@@ -33,7 +33,7 @@ class AuthServiceProvider extends ServiceProvider
             $accessGranted =true;
           }
           //in case we create a simple role based permissions authorization
-          elseif ($user->role == "admin") {
+          elseif ($user->isAdmin()) {
             $accessGranted =true;
           }
         return $accessGranted;
