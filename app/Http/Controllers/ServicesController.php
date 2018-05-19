@@ -38,7 +38,9 @@ class ServicesController extends Controller
             return redirect('/organizations/'. $organization->name);
         }
 
-        return view('organizations.services.create', compact('organization'));
+        $icons = \App\Icon::all();
+
+        return view('organizations.services.create', compact('organization', 'icons'));
     }
 
     /**

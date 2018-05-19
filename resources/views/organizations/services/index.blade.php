@@ -27,7 +27,7 @@
           <div class="card-body">
             {{-- <h5 class="card-title">Special title treatment</h5> --}}
             <p class="card-text">{{ $service->description }}</p>
-            <a href="/organizations/{{ $organization->name }}/services/{{ $service->id }}" class="btn btn-primary">Visit {{ $service->title }}</a>
+            <a href="/organizations/{{ $organization->name }}/services/{{ $service->id }}/edit" class="btn btn-outline-secondary">Edit {{ $service->title }}</a>
           </div>
         </div>
       @endforeach

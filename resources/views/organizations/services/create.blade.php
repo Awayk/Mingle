@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
 
+
+
 @section('content')
 
 
@@ -25,10 +27,31 @@
 
       {{ csrf_field() }}
 
-      <div class="form-group">
+      {{-- <div class="form-group">
         <label for="icon_id">Icon ID</label>
         <input type="number" class="form-control" id="icon_id" placeholder="225" name="icon_id" value="{{ old('icon_id') }}">
+      </div> --}}
+
+      <div class="form-group">
+        <label for="icon_id">Icon</label>
+
+        <div class="row text-center">
+          <select class="form-control col-6" name="icon_id" id='icon_id'>
+            @foreach ($icons as $icon)
+              <option value="{{ $icon->id }}">
+                <i class="{{ substr($icon->html_class, 7) }}" style="font-size: 5em"></i>{{ substr($icon->html_class, 7) }}
+              </option>
+            @endforeach
+
+          </select>
+          <div class="col-6" >
+            <i id="iconPreview" class="fas fa-address-book" style="font-size: 5em"></i>
+          </div>
+        </div>
+
+
       </div>
+
 
       <div class="form-group">
         <label for="title">Service Title</label>
@@ -52,5 +75,17 @@
   </div>
 
 
+  <script type="text/javascript">
+    $(function(){
+      var oldClass = $("#iconPreview").attr('class');
+      $("#icon_id").change(function(){
+        var newClass = "fas fa-"+$("#icon_id option:selected").text().trim();
+        console.log(oldClass);
+        console.log(newClass);
+        $("#iconPreview").removeClass(oldClass).addClass(newClass);
+        oldClass = newClass;
+      });
+    });
+  </script>
 
 @endsection

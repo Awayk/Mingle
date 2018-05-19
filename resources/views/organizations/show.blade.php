@@ -30,7 +30,12 @@
     {{-- <div class="container-fluid my-5"> --}}
       {{-- <div class="jumbotron jumbotron-fluid"> --}}
         <div class="container">
-          <h2 class="display-4">General Information</h2>
+          <h2 class="display-4">
+            General Information
+            @if (auth()->check()  && (auth()->user()->isAdmin() || auth()->user()->id == $organization->user_id))
+              <a href="{{ $organization->name }}/edit"><button type="button" name="button" class="btn btn-outline-secondary">Edit</button></a>
+            @endif
+          </h2>
           <table class="table table-striped">
             <tbody>
               <tr>
@@ -64,7 +69,12 @@
 
   <section id="section3" class="sectionContent">
     <div class="container">
-      <h2 class="text-center">Services</h2>
+      <h2 class="text-center">
+        Services
+        @if (auth()->check()  && (auth()->user()->isAdmin() || auth()->user()->id == $organization->user_id))
+          <a href="{{ $organization->name }}/services"><button type="button" name="button" class="btn btn-outline-secondary">Edit</button></a>
+        @endif
+      </h2>
       <hr>
 
       <div class="row">
@@ -93,7 +103,12 @@
 
   <section id="section4" style="background-color: rgb(249, 206, 173)" class="sectionContent">
     <div class="container">
-      <h2 class="text-center">Sponsors</h2>
+      <h2 class="text-center">
+        Sponsors
+        @if (auth()->check()  && (auth()->user()->isAdmin() || auth()->user()->id == $organization->user_id))
+          <a href="#"><button type="button" name="button" class="btn btn-outline-secondary">Edit</button></a>
+        @endif
+      </h2>
       <hr>
 
 
