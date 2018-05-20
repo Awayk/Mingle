@@ -28,6 +28,7 @@ class CreateOrganizationsTable extends Migration
             $table->string('donate_link', 2083)->nullable(true);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->unique();
+            $table->text('sponsor_message')->nullable(true);
             $table->timestamps();
         });
     }

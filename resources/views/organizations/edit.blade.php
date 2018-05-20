@@ -84,6 +84,12 @@
       </div>
 
       <div class="form-group">
+        <label for="sponsor_message">Message to your Sponsors and Donators visiting your Page </label>
+        <textarea class="form-control" id="sponsor_message" rows="3" name="sponsor_message">{{ $organization->sponsor_message }}</textarea>
+        <small id="sponsor_message_help" class="form-text text-muted">Use ; (semicolon) to start a new paragraph</small>
+      </div>
+
+      <div class="form-group">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
 

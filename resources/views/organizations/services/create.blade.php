@@ -74,18 +74,4 @@
     <br>
   </div>
 
-
-  <script type="text/javascript">
-    $(function(){
-      var oldClass = $("#iconPreview").attr('class');
-      $("#icon_id").change(function(){
-        var newClass = "fas fa-"+$("#icon_id option:selected").text().trim();
-        console.log(oldClass);
-        console.log(newClass);
-        $("#iconPreview").removeClass(oldClass).addClass(newClass);
-        oldClass = newClass;
-      });
-    });
-  </script>
-
 @endsection

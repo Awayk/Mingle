@@ -64,6 +64,7 @@ class OrganizationsController extends Controller
           'street' => request('street'),
           'street_number' => request('street_number'),
           'donate_link' => request('donate_link'),
+          'sponsor_message' => request('sponsor_message'),
           'user_id' => auth()->id()
         ]);
         return redirect('/organizations');
@@ -112,7 +113,7 @@ class OrganizationsController extends Controller
             'mail' => 'email|max:255',
         ]);
 
-        $input = $request->only('name', 'lead_description', 'link', 'mail', 'telephone', 'location_name', 'zip', 'location', 'street', 'street_number', 'donate_link');
+        $input = $request->only('name', 'lead_description', 'link', 'mail', 'telephone', 'location_name', 'zip', 'location', 'street', 'street_number', 'donate_link', 'sponsor_message');
 
 
         $organization->update([
@@ -127,6 +128,7 @@ class OrganizationsController extends Controller
           'street' => $input['street'],
           'street_number' => $input['street_number'],
           'donate_link' => $input['donate_link'],
+          'sponsor_message' => $input['sponsor_message'],
           'user_id' => auth()->id()
         ]);
 

@@ -111,8 +111,12 @@
       </h2>
       <hr>
 
-
-        <p>We would like to thank all of our sponsors, private, corporate or governmental, for their ongoing support</p>
+        @php
+          $sponsor_messages = explode(';', $organization->sponsor_message);
+        @endphp
+        @foreach ($sponsor_messages as $message)
+          <p>{{ $message}}</p>
+        @endforeach
 
         <h3>Our top Sponsors</h3>
         <hr>
