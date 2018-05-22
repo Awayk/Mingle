@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
+    protected $fillable = ['icon_id', 'title', 'description'];
+
     public function organization()
     {
       return $this->belongsTo(Organization::class);

@@ -11,24 +11,19 @@
 |
 */
 
+//Route to the welcome page
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/organizations', 'OrganizationsController@index');
-Route::get('/organizations/create', 'OrganizationsController@create');
-Route::get('/organizations/{organization}', 'OrganizationsController@show');
-Route::post('/organizations', 'OrganizationsController@store');
+//CRUD routes for everything regarding the Organization
+Route::resource('organizations', 'OrganizationsController');
 
-
-// //hardcoded for testing
-// Route::get('/organizations/silbernetz', function () {
-//     return view('organizations.silbernetz');
-// });
-
+Route::resource('organizations/{organization}/services', 'ServicesController');
 
 
 // auth Routes
 Auth::routes();
 
+// dummy route user gets redirected too after login
 Route::get('/home', 'HomeController@index')->name('home');

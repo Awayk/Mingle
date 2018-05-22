@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Gate;
 use App\Organization;
 
 class OrganizationsController extends Controller
 {
+
+      public function __construct()
+      {
+        $this->middleware('auth')->except(['index', 'show']);
+      }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +22,8 @@ class OrganizationsController extends Controller
      */
     public function index()
     {
-
-        return view('organizations.index');
+        $organizations = Organization::all();
+        return view('organizations.index', compact('organizations'));
     }
 
     /**
@@ -39,9 +46,26 @@ class OrganizationsController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate(request(), [
+            'name' => 'required|string|max:255|unique:organizations',
+            'mail' => 'email|max:255|unique:organizations',
+        ]);
+
         Organization::create([
           'name' => request('name'),
-          'short_description' => request('short_description')
+          'lead_description' => request('lead_description'),
+          'link' => request('link'),
+          'mail' => request('mail'),
+          'telephone' => request('telephone'),
+          'location_name' => request('location_name'),
+          'zip' => request('zip'),
+          'location' => request('location'),
+          'street' => request('street'),
+          'street_number' => request('street_number'),
+          'donate_link' => request('donate_link'),
+          'sponsor_message' => request('sponsor_message'),
+          'user_id' => auth()->id()
         ]);
         return redirect('/organizations');
     }
@@ -63,9 +87,13 @@ class OrganizationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Organization $organization)
     {
-        //
+        if (Gate::denies('edit-organization', $organization)) {
+            return redirect('/organizations/'. $organization->name);
+        }
+
+        return view('organizations.edit', compact('organization'));
     }
 
     /**
@@ -77,7 +105,37 @@ class OrganizationsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $organization = Organization::find($id);
+
+        $this->validate(request(), [
+            'name' => 'required|string|max:255',
+            'mail' => 'email|max:255',
+        ]);
+
+        $input = $request->only('name', 'lead_description', 'link', 'mail', 'telephone', 'location_name', 'zip', 'location', 'street', 'street_number', 'donate_link', 'sponsor_message');
+
+
+        $organization->update([
+          'name' => $input['name'],
+          'lead_description' => $input['lead_description'],
+          'link' => $input['link'],
+          'mail' => $input['mail'],
+          'telephone' => $input['telephone'],
+          'location_name' => $input['location_name'],
+          'zip' => $input['zip'],
+          'location' => $input['location'],
+          'street' => $input['street'],
+          'street_number' => $input['street_number'],
+          'donate_link' => $input['donate_link'],
+          'sponsor_message' => $input['sponsor_message'],
+          'user_id' => auth()->id()
+        ]);
+
+
+        $routeName = strtolower($input['name']);
+
+        return redirect('/organizations/'.$routeName);
     }
 
     /**
