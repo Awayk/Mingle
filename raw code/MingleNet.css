@@ -1,0 +1,8 @@
+/* Complete Design Stylesheet for MingleNet Page */
+
+#mingleNetSection {
+  background-image: url(../public/img/HappyPeople.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+}
