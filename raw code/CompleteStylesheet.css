@@ -28,7 +28,7 @@ body {
 }
 
 #navBar .nav-link:hover {
-  color: gray;
+  color: rgb(200, 200, 200);
 }
 
 #searchButton {
@@ -45,7 +45,7 @@ body {
 }
 
 #twitterFeedIcon:hover {
-  color: #1986c8;
+  color: #29afff;
 }
 
 #twitterFeedDropdown {
@@ -186,16 +186,17 @@ body {
 /* Footer Design */
 #footerSection {
   border-top: 1pt solid rgb(180, 180, 180);
-  background-color: rgb(70, 70, 70);
+  background-color: rgb(62, 62, 62);
   color: white;
 }
 
 #footerHeader {
   font-family: Montserrat Medium, sans-serif;
+  font-size: 12pt;
 }
 
 #footerLink {
-  font-size: 11pt;
+  font-size: 10pt;
   color: rgba(230, 230, 230, 0.9);
 }
 
@@ -212,7 +213,9 @@ body {
   margin-bottom: 8px;
 }
 
-
+#copyrightContainer {
+  background-color: rgb(20, 20, 20)
+}
 
 /* Social Media Link Colors */
 #twitterLink {
@@ -269,17 +272,37 @@ body {
   color: white;
 }
 
+#mingleNetParagraph {
+font-size: 14pt;
+}
+
+
 #infoSection11 {
   background-color: white;
 }
 
+
 #infoSection12 {
-  background-color: rgb(130, 140, 193);
-  padding-top: 100px;
-  padding-bottom: 100px;
+  background-color: rgb(244, 244, 244);
+  border-top: 1pt solid rgb(180, 180, 180);
+  padding-top: 50px;
+  padding-bottom: 80px;
+}
+
+.carousel-control {
+
+  color: rgb(60, 60, 60);
+  font-size: 20pt;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .carousel-item {
   padding-left: 11%;
   padding-right: 11%;
+}
+
+#infoSection13 {
+  border-top: 1pt solid rgb(180, 180, 180);
+  background-color: rgb(244, 244, 244);
 }
