@@ -21,7 +21,7 @@
   <div class="container" id="section2">
     <br>
     <br>
-    <form class="" action="/organizations" method="post">
+    <form class="" action="/organizations" method="post" enctype="multipart/form-data">
 
       {{ csrf_field() }}
 
@@ -29,6 +29,13 @@
         <label for="name">Organization name</label>
         <input type="text" class="form-control" id="name" placeholder="My Organization" name="name" value="{{ old('name') }}">
       </div>
+
+      <input type="file" name="logo" value="">
+
+      {{-- <div class="custom-file">
+        <label class="custom-file-label" for="logo">Upload Your Organization's Logo</label>
+        <input type="file" class="custom-file-input" id="logo" name="logo">
+      </div> --}}
 
       <div class="form-group">
         <label for="lead_description">Short description </label>

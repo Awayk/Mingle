@@ -52,6 +52,23 @@ class OrganizationsController extends Controller
             'mail' => 'email|max:255|unique:organizations',
         ]);
 
+        $path = "";
+
+        if ($request->hasFile('logo')) {
+           $logo = $request->file('logo');
+           $name = request('name').'.'.$logo->getClientOriginalExtension();
+           // $destinationPath = public_path('/uploads/articles');
+           // $logoPath = $destinationPath. "/".  $name;
+           // $logo->move($destinationPath, $name);
+           // $article->image = $name;
+
+           $path = $logo->storeAs(
+             'logos', $name , 'public'
+           );
+         }
+
+
+
         Organization::create([
           'name' => request('name'),
           'lead_description' => request('lead_description'),

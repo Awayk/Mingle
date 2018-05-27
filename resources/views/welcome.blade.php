@@ -16,7 +16,7 @@
           <div class="col-md-7 align-self-center">
             <h1 class="display-4">Join MingleNet</h1>
             <p>The world's first Network of Organizations commited to fighting Loneliness</p>
-            <button class="btn btn-light btn-outline-light" type="button" name="button">Become Part of it!</button>
+            <a href="/register" class="btn btn-light btn-outline-light">Become Part of it!</a>
           </div>
           <div class="col-md-5">
           </div>

@@ -25,5 +25,7 @@ Route::resource('organizations/{organization}/services', 'ServicesController');
 // auth Routes
 Auth::routes();
 
-// dummy route user gets redirected too after login
-Route::get('/home', 'HomeController@index')->name('home');
+//  route user gets redirected too after login
+Route::get('/home', function (){
+    return view('welcome');
+})->name('home');

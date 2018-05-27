@@ -38,6 +38,10 @@
 }
 
 
+html, body {
+  height: 100%;
+}
+
 
 /* Complete Stylesheet for Home Page (Bootstrap Code) */
 
@@ -47,6 +51,8 @@ body {
   background-color: white;
   font-family: Montserrat Light, sans-serif;
   position: relative;
+  display: flex;
+  flex-flow: column;
 }
 
 
@@ -196,6 +202,7 @@ body {
   border-top: 1pt solid grey;
   background-color: rgb(70, 70, 70);
   color: white;
+  margin-top: auto;
 }
 
 #readButton {

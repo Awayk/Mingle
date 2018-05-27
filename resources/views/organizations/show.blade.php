@@ -27,6 +27,8 @@
 
   {{-- general information --}}
   <section id="section2" class="sectionContent">
+
+    {{-- <img src="/storage/logos/test3.jpg" alt=""> --}}
     {{-- <div class="container-fluid my-5"> --}}
       {{-- <div class="jumbotron jumbotron-fluid"> --}}
         <div class="container">
