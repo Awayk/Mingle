@@ -2,7 +2,7 @@
 /* Complete Stylesheet for Welcome Page (Bootstrap Code) */
 
 
-/* General Body Design */
+/* Design: General Body */
 body {
   background-color: white;
   font-family: Montserrat Light, sans-serif;
@@ -11,7 +11,7 @@ body {
 
 
 
-/* Initial Navbar Design */
+/* Design: Initial Navbar */
 #outerNavbar {
   background: transparent;
 }
@@ -56,7 +56,7 @@ body {
 
 
 
-/* Scrolled Navbar Design */
+/* Design: Scrolled Navbar */
 #outerNavbar.scrolled {
   background-color: white;
   border-bottom: 1pt solid rgb(16,54,91);
@@ -90,7 +90,7 @@ body {
 
 
 
-/* MingleNet Design */
+/* Design: MingleNet Advertisement including Background-Video */
 #mingleNetSection {
   position: relative;
 }
@@ -119,7 +119,7 @@ body {
 
 
 
-/* Info Section 2 Design */
+/* Design: Informative Section with Picture & Text (No 0.2) */
 #infoSection2 {
   border-top: 1px solid rgb(180, 180, 180);
   background-color: rgb(236, 236, 236);
@@ -127,7 +127,7 @@ body {
 
 
 
-/* Info Card Section Design */
+/* Design: Info Card Section */
 #infoCardSection {
   border-top: 1px solid rgb(180, 180, 180);
   padding-top: 50px;
@@ -145,14 +145,14 @@ body {
 
 
 
-/* General Ruler below Headings */
+/* Design: General Ruler below Headings */
 #headingRuler {
   width: 10%;
 }
 
 
 
-/* Section for Newsletter Subscription - Design */
+/* Design: Section for Newsletter Subscription */
 #subscriptionSection {
   border-top: 1px solid rgb(180, 180, 180);
   background-color: rgb(236, 236, 236);
@@ -169,7 +169,7 @@ body {
 
 
 
-/* Social Media Integration Design */
+/* Design: Social Media Integration */
 #socialMediaSection {
   border-top:1px solid rgb(180, 180, 180);
   padding-top: 50px;
@@ -183,7 +183,7 @@ body {
 
 
 
-/* Footer Design */
+/* Design: Footer including Social-Media Links */
 #footerSection {
   border-top: 1pt solid rgb(180, 180, 180);
   background-color: rgb(62, 62, 62);
@@ -217,7 +217,7 @@ body {
   background-color: rgb(20, 20, 20)
 }
 
-/* Social Media Link Colors */
+/* Design: Social Media Link Colors */
 #twitterLink {
   color: #1da1f2;
 }
@@ -240,6 +240,7 @@ body {
 
 /* Complete Design-Stylesheet for MingleNet Page */
 
+/* Design: Top Section advertising MingleNet - including Background-Video */
 #mingleNetSection {
   box-shadow: 0px 1px 10px grey;
 }
@@ -277,6 +278,7 @@ font-size: 14pt;
 }
 
 
+/* Design: Informative Section containing Infographic & Text (No 1.1) */
 #infoSection11 {
   background-color: white;
 }
@@ -285,8 +287,8 @@ font-size: 14pt;
 #infoSection12 {
   background-color: rgb(244, 244, 244);
   border-top: 1pt solid rgb(180, 180, 180);
-  padding-top: 50px;
-  padding-bottom: 80px;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .carousel-control {
@@ -304,5 +306,5 @@ font-size: 14pt;
 
 #infoSection13 {
   border-top: 1pt solid rgb(180, 180, 180);
-  background-color: rgb(244, 244, 244);
+  background-color: white;
 }
