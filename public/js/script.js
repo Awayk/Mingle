@@ -12,6 +12,8 @@ $(function() {
     $search.toggleClass('scrolled', $(this).scrollTop() > $search.height());
     var $toggler = $("#navToggler");
     $toggler.toggleClass('scrolled', $(this).scrollTop() > $toggler.height());
+    var $login = $("#loginButton");
+    $login.toggleClass('scrolled', $(this).scrollTop() > $login.height());
   });
 
   /*

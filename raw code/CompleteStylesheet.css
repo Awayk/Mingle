@@ -36,11 +36,15 @@ body {
   color: white;
 }
 
+#searchButton:hover {
+  background-color: rgb(200, 200, 200)
+}
+
 #navToggler {
   color: white;
 }
 
-#twitterFeedDropdown {
+#twitterFeedIcon {
   color: #1da1f2;
 }
 
@@ -53,6 +57,14 @@ body {
   overflow-y: auto;
 }
 
+#loginButton {
+  background-color: gray;
+  color: white;
+}
+
+#loginButton:hover {
+  background-color: rgb(200, 200, 200);
+}
 
 
 
@@ -83,11 +95,23 @@ body {
   border: none;
 }
 
+#searchButton.scrolled:hover {
+  color: black;
+}
+
 #navToggler.scrolled {
   color: rgb(100, 100, 100);
 }
 
+#loginButton.scrolled {
+  background-color: transparent;
+  color: rgb(100, 100, 100);
+  border: none;
+}
 
+#loginButton.scrolled:hover {
+  color: black;
+}
 
 
 /* MingleNet Design */
@@ -304,5 +328,18 @@ font-size: 14pt;
 
 #infoSection13 {
   border-top: 1pt solid rgb(180, 180, 180);
-  background-color: rgb(244, 244, 244);
+  background-color: white;
+}
+
+#mingleNetAnimation1 {
+  vertical-align: middle;
+}
+
+#animationColumn {
+  vertical-align: middle;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
 }
