@@ -29,3 +29,8 @@ Auth::routes();
 Route::get('/home', function (){
     return view('welcome');
 })->name('home');
+
+
+Route::get('/minglenet', function () {
+    return view('mingleNet');
+});

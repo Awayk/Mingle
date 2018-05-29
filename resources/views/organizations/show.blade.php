@@ -38,36 +38,51 @@
               <a href="{{ $organization->name }}/edit"><button type="button" name="button" class="btn btn-outline-secondary">Edit</button></a>
             @endif
           </h2>
-          <table class="table table-striped">
-            <tbody>
-              <tr>
-                <th scope="row">website</th>
-                <td>  <a href="{{$organization->link}}">{{ $organization->name }} Hompage</a></td>
-              </tr>
-              <tr>
-                <th scope="row">email</th>
-                <td>{{ $organization->mail }}</td>
-              </tr>
-              <tr>
-                <th scope="row">telephone</th>
-                <td>{{ $organization->telephone }}</td>
-              </tr>
-              <tr>
-                <th scope="row">address</th>
-                <td>
-                  <address>
-                    <strong>{{ $organization->location_name }}</strong><br>
-                    {{ $organization->street }} {{ $organization->street_number }}<br>
-                    {{ $organization->zip }} {{ $organization->location }}<br>
-                  </address>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+
+          <div class="row">
+
+            <table class="table table-striped col-6">
+              <tbody>
+                <tr>
+                  <th scope="row">Website</th>
+                  <td>  <a href="{{$organization->link}}">{{ $organization->name }} Hompage</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">E-Mail</th>
+                  <td>{{ $organization->mail }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Telephone</th>
+                  <td>{{ $organization->telephone }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Address</th>
+                  <td>
+                    <address>
+                      <strong>{{ $organization->location_name }}</strong><br>
+                      {{ $organization->street }} {{ $organization->street_number }}<br>
+                      {{ $organization->zip }} {{ $organization->location }}<br>
+                    </address>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="col-6">
+              @if ($organization->logo !== "")
+                <img src="{{asset("storage/$organization->logo")}}" class="img img-fluid" />
+              @endif
+              {{-- Exchange the img by a placeholder <img src="{{asset("storage/$organization->logo")}}" onerror="this.onerror=null;this.src='{{asset("img/MLetterLogo.png")}}';" class="img img-fluid" /> --}}
+            </div>
+
+
+          </div>
+
         </div>
       {{-- </div> --}}
     {{-- </div> --}}
   </section>
+
 
   <section id="section3" class="sectionContent">
     <div class="container">

@@ -125,7 +125,7 @@
     <div class="col-md-3 text-center">
       <a href="#"><span class="fab fa-instagram fa-5x mb-2" id="instagramLink"></span></a>
       <h5 id="socialMediaHeader">Instagram</h5>
-      <a href="#">Check us out on Twitter</a>
+      <a href="#">Check us out on Instagram</a>
     </div>
     <div class="col-md-3 text-center">
       <a href="#"><span class="fab fa-reddit-square fa-5x mb-2" id="redditLink"></span></a>

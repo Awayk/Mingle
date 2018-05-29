@@ -562,24 +562,6 @@ INSERT INTO `icons` (`id`, `html_class`) VALUES
 (560, 'fas fa-x-ray'),
 (561, 'fas fa-yen-sign');
 
---
--- Dumping data for table `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(19, '2010_10_12_000000_create_users_table', 1),
-(20, '2011_10_12_100000_create_password_resets_table', 1),
-(21, '2013_05_10_152133_create_icons_table', 1),
-(22, '2014_05_10_152148_create_sponsors_table', 1),
-(23, '2015_05_08_121741_create_organizations_table', 1),
-(24, '2016_05_10_152117_create_services_table', 1),
-(25, '2018_05_16_104217_create_organization_sponsor_table', 2),
-(26, '2018_05_16_105234_create_sponsor_user_table', 3),
-(27, '2016_01_15_105324_create_roles_table', 4),
-(28, '2016_01_15_114412_create_role_user_table', 4),
-(29, '2016_01_26_115212_create_permissions_table', 4),
-(30, '2016_01_26_115523_create_permission_role_table', 4),
-(31, '2016_02_09_132439_create_permission_user_table', 4);
 
 
 

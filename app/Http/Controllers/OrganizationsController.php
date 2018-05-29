@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Gate;
 use App\Organization;
+use Storage;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class OrganizationsController extends Controller
 {
@@ -50,22 +52,34 @@ class OrganizationsController extends Controller
         $this->validate(request(), [
             'name' => 'required|string|max:255|unique:organizations',
             'mail' => 'email|max:255|unique:organizations',
+            'logo' => 'image|mimes:jpeg,png|max:2000'
         ]);
 
         $path = "";
 
+
         if ($request->hasFile('logo')) {
            $logo = $request->file('logo');
-           $name = request('name').'.'.$logo->getClientOriginalExtension();
-           // $destinationPath = public_path('/uploads/articles');
-           // $logoPath = $destinationPath. "/".  $name;
-           // $logo->move($destinationPath, $name);
-           // $article->image = $name;
+           $filename = strtolower(request('name').'.'.$logo->getClientOriginalExtension());
+          //delete old file, if it exists
+           if (Storage::disk('public')->exists($filename)) {
+             Storage::disk('public')->delete('logos/'.$filename);
+           }
 
-           $path = $logo->storeAs(
-             'logos', $name , 'public'
+           $logo_resize = Image::make($logo->getRealPath());
+           //resize if wanted/necessary
+           // $logo_resize->resize(500, 500);
+
+           $path = 'logos/' .$filename;
+
+           //store new file in public/logos/$name
+           $logo_resize->save(
+             public_path('storage/'.$path)
+             // 'logos', $name , 'public'
            );
          }
+
+         // dd($path);
 
 
 
@@ -82,6 +96,7 @@ class OrganizationsController extends Controller
           'street_number' => request('street_number'),
           'donate_link' => request('donate_link'),
           'sponsor_message' => request('sponsor_message'),
+          'logo' => $path,
           'user_id' => auth()->id()
         ]);
         return redirect('/organizations');
@@ -128,10 +143,40 @@ class OrganizationsController extends Controller
         $this->validate(request(), [
             'name' => 'required|string|max:255',
             'mail' => 'email|max:255',
+            // 'logo' => 'nullable|image|mimes:jpeg,png|max:2000'
         ]);
 
         $input = $request->only('name', 'lead_description', 'link', 'mail', 'telephone', 'location_name', 'zip', 'location', 'street', 'street_number', 'donate_link', 'sponsor_message');
 
+        $path = $organization->logo;
+
+        if ($request->hasFile('logo')) {
+           $logo = $request->file('logo');
+           $filename = strtolower(request('name').'.'.$logo->getClientOriginalExtension());
+          //delete old file, if it exists
+           if (Storage::disk('public')->exists($filename)) {
+             Storage::disk('public')->delete('logos/'.$filename);
+           }
+
+           $logo_resize = Image::make($logo->getRealPath());
+           //resize if wanted/necessary
+           // $logo_resize->resize(500, 500);
+
+           $path = 'logos/' .$filename;
+
+           //store new file in public/logos/$name
+           $logo_resize->save(
+             public_path('storage/'.$path)
+             // 'logos', $name , 'public'
+           );
+         }
+
+        //change filename if organization name changes
+         if ($input['name'] != $organization->name) {
+           $newFilename = strtolower($input['name'] . '.' . pathinfo($organization->logo, PATHINFO_EXTENSION));
+           Storage::disk('public')->move($organization->logo,  'logos/'.$newFilename);
+           $path = 'logos/'.$newFilename;
+         }
 
         $organization->update([
           'name' => $input['name'],
@@ -146,6 +191,7 @@ class OrganizationsController extends Controller
           'street_number' => $input['street_number'],
           'donate_link' => $input['donate_link'],
           'sponsor_message' => $input['sponsor_message'],
+          'logo' => $path,
           'user_id' => auth()->id()
         ]);
 
