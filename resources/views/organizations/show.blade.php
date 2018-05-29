@@ -41,19 +41,19 @@
           <table class="table table-striped">
             <tbody>
               <tr>
-                <th scope="row">website</th>
+                <th scope="row">Website</th>
                 <td>  <a href="{{$organization->link}}">{{ $organization->name }} Hompage</a></td>
               </tr>
               <tr>
-                <th scope="row">email</th>
+                <th scope="row">E-Mail</th>
                 <td>{{ $organization->mail }}</td>
               </tr>
               <tr>
-                <th scope="row">telephone</th>
+                <th scope="row">Telephone</th>
                 <td>{{ $organization->telephone }}</td>
               </tr>
               <tr>
-                <th scope="row">address</th>
+                <th scope="row">Address</th>
                 <td>
                   <address>
                     <strong>{{ $organization->location_name }}</strong><br>

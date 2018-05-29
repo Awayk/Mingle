@@ -50,9 +50,12 @@ class OrganizationsController extends Controller
         $this->validate(request(), [
             'name' => 'required|string|max:255|unique:organizations',
             'mail' => 'email|max:255|unique:organizations',
+            'logo' => 'image|mimes:jpeg,png|max:3000'
         ]);
 
         $path = "";
+
+        // dd($request);
 
         if ($request->hasFile('logo')) {
            $logo = $request->file('logo');
