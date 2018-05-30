@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Gate;
 use App\Organization;
+use Storage;
 
 class OrganizationsController extends Controller
 {
@@ -65,10 +66,19 @@ class OrganizationsController extends Controller
            // $logo->move($destinationPath, $name);
            // $article->image = $name;
 
+
+          //delete old file, if it exists
+           if (Storage::disk('public')->exists($name)) {
+             Storage::disk('public')->delete('logos/'.$name);
+           }
+
+           //store new file in public/logos/$name
            $path = $logo->storeAs(
              'logos', $name , 'public'
            );
          }
+
+         // dd($path);
 
 
 
@@ -85,6 +95,7 @@ class OrganizationsController extends Controller
           'street_number' => request('street_number'),
           'donate_link' => request('donate_link'),
           'sponsor_message' => request('sponsor_message'),
+          'logo' => $path,
           'user_id' => auth()->id()
         ]);
         return redirect('/organizations');

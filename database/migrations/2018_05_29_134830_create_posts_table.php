@@ -18,6 +18,9 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('body');
             $table->string('multimedia');
+            $table->integer('organization_id')->unsigned();
+            $table->foreign('organization_id')->references('id')
+                  ->on('organizations')->onDelete('cascade');
             $table->timestamps();
         });
     }
