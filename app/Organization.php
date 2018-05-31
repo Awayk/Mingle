@@ -33,6 +33,11 @@ class Organization extends Model
     return $this->hasMany(Sponsor::class);
   }
 
+  public function posts()
+  {
+    return $this->hasMany(Post::class);
+  }
+
   public function addService($request)
   {
     $this->services()->create([
