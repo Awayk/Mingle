@@ -35,7 +35,7 @@
     <div class="custom-file">
       <input type="file" class="custom-file-input" id="logo" name="logo" value="{{ old('logo')}}">
       <label class="custom-file-label" for="logo">Upload Your Organization's Logo</label>
-      <small id="logo_help" class="form-text text-muted">The maximum filesize is 2MB | possible formats are JPG and PNG </small><div id="logo_help_filetype"></div><div id="logo_help_filesize"></div>
+      <small id="logo_help" class="form-text text-muted">The maximum filesize is 2MB | possible formats are JPG and PNG </small><div id="help_filetype"></div><div id="help_filesize"></div>
     </div>
 
     <hr>

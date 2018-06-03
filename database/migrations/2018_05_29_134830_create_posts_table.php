@@ -16,11 +16,12 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->text('body');
-            $table->string('multimedia');
-            $table->integer('organization_id')->unsigned();
-            $table->foreign('organization_id')->references('id')
-                  ->on('organizations')->onDelete('cascade');
+            // $table->string('lead_description'); in case a specified short summary is wanted
+            $table->longText('body');
+            // $table->string('multimedia'); in case of a specified title img
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')
+                  ->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

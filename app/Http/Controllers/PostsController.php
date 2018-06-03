@@ -4,8 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Post;
+use Purifier;
+
 class PostsController extends Controller
 {
+
+    public function __construct()
+    {
+      $this->middleware('auth')->except(['index', 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +22,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+      $posts = Post::all();
+      return view('posts.index', compact('posts'));
     }
 
     /**
@@ -23,7 +33,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -34,7 +44,52 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+      $detail = $request->body;
+      // $detail = Purifier::clean($request->get('body'));
+
+
+
+      $dom = new \domdocument();
+
+      $dom->encoding = 'utf-8';
+      $dom->loadHTML( utf8_decode( $detail ) ); // important!
+
+      // $dom->loadHtml($detail, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+
+
+      $images = $dom->getelementsbytagname('img');
+
+      foreach($images as $k => $img){
+          if(substr($img->getattribute('src'),0,4)!='http') {
+            $data = $img->getattribute('src');
+
+            list($type, $data) = explode(';', $data);
+            list(, $data)      = explode(',', $data);
+
+            $data = base64_decode($data);
+            $image_name= time().$k.'.png';
+            $path = public_path() .'\\storage\\postImg\\'. $image_name;
+
+            file_put_contents($path, $data);
+
+            $img->removeattribute('src');
+            $img->setattribute('src', '/storage/postImg/'.$image_name);
+          }
+      }
+
+      $detail = $dom->savehtml();
+      $detail = Purifier::clean($detail);
+
+      Post::create([
+        'title' => request('title'),
+        'body' => $detail,
+        // 'multimedia' => "/img/HappyCrowd.jpg",
+        'user_id' => auth()->id()
+      ]);
+      return redirect('/posts');
     }
 
     /**
