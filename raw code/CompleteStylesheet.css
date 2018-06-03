@@ -331,8 +331,6 @@ font-size: 14pt;
 #infoSection13 {
   border-top: 1pt solid rgb(180, 180, 180);
   background-color: white;
-<<<<<<< HEAD
-=======
 }
 
 #mingleNetAnimation1 {
@@ -346,5 +344,4 @@ font-size: 14pt;
 .vertical-align {
   display: flex;
   align-items: center;
->>>>>>> 6ab3c927f7580c8dc8f4411d16dda78d47aaf322
 }
