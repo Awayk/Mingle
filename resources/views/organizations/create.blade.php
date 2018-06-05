@@ -38,6 +38,8 @@
       <small id="logo_help" class="form-text text-muted">The maximum filesize is 2MB | possible formats are JPG and PNG </small><div id="help_filetype"></div><div id="help_filesize"></div>
     </div>
 
+    
+
     <hr>
 
     <div class="form-group">

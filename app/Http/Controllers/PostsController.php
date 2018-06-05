@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Post;
 use Purifier;
+use Carbon\Carbon;
 
 class PostsController extends Controller
 {
@@ -80,8 +81,10 @@ class PostsController extends Controller
           }
       }
 
-      $detail = $dom->savehtml();
-      $detail = Purifier::clean($detail);
+      $detail_pure = $dom->savehtml();
+      // dd($detail);
+      $detail = Purifier::clean($detail_pure);
+      // dd( $detail_pure, $detail);
 
       Post::create([
         'title' => request('title'),
@@ -98,9 +101,12 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        //
+        $prev = Post::where('id', '<', $post->id)->max('id');
+        $next = Post::where('id', '>', $post->id)->first();
+
+        return view('posts.show', compact('post', 'next', 'prev'));
     }
 
     /**

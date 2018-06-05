@@ -9,9 +9,9 @@ class Post extends Model
 
   protected $guarded = ['id'];
 
-  
+
   public function user()
   {
-    return $this->belongsTo(Organization::class);
+    return $this->belongsTo(User::class);
   }
 }
