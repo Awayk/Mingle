@@ -21,6 +21,8 @@
   <section id="section2">
     <div class="container">
 
+      @include('layouts.pagination', ['items' => $organizations])
+
       @foreach ($organizations as $organization)
         <div class="card">
           <h2 class="card-header">{{ $organization->name }}</h2>

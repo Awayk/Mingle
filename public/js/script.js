@@ -28,10 +28,10 @@ $(function() {
       });
 
       /*
-       * Stylement of the logo upload and client side check of filsize and filetype
+       * Stylement of the Image upload and client side check of filsize and filetype
        *
        */
-      $('#logo').bind('change', function() {
+      $('.imgInput').bind('change', function() {
         /*
          * Insert the filename of the selected file into the field
          */
@@ -42,7 +42,7 @@ $(function() {
         if (fieldVal != undefined || fieldVal != "") {
           $(this).next('.custom-file-label').html(fieldVal);
         } else {
-          $(this).next('.custom-file-label').html("Upload Your Organization's Logo");
+          $(this).next('.custom-file-label').html("Upload an Image");
         }
         /*
          * client side check of filesize and filetype
@@ -58,30 +58,30 @@ $(function() {
           //disable the submit button to prevent submission with error
           $('#formSubmit').prop('disabled', true);
           //add hint with the filetype and a warning
-          $('#help_filetype').html('<i class="fas fa-exclamation-triangle"></i> Your Logo is of type ' + filetype + ' ! THIS IS NOT SUPPORTED ! YOU WILL NOT BE ABLE TO SUBMIT THIS FORM <i class="fas fa-exclamation-triangle"></i>')
+          $('#help_filetype').html('<i class="fas fa-exclamation-triangle"></i> Your Image is of type ' + filetype + ' ! THIS IS NOT SUPPORTED ! YOU WILL NOT BE ABLE TO SUBMIT THIS FORM <i class="fas fa-exclamation-triangle"></i>')
           //style the warning as warning
           $('#help_filetype').removeClass('alert alert-success').addClass('alert alert-danger');
         } else {
           //re-enable the submit button in case it got disabled
           $('#formSubmit').prop('disabled', false);
           //add hint with the filesize
-          $('#help_filetype').html('<i class="far fa-check-circle"></i> Your Logo is of type ' + filetype + ' <i class="far fa-check-circle"></i>');
+          $('#help_filetype').html('<i class="far fa-check-circle"></i> Your Image is of type ' + filetype + ' <i class="far fa-check-circle"></i>');
           //style hint as success
           $('#help_filetype').removeClass('alert alert-danger').addClass('alert alert-success');
         }
 
-        if (filesize > 2) { //if filesize exceeds limit of 2 MB
+        if (filesize > 5) { //if filesize exceeds limit of 5 MB
           //disable the submit button to prevent submission with error
           $('#formSubmit').prop('disabled', true);
           //add hint with the filesize and a warning
-          $('#help_filesize').html('<i class="fas fa-exclamation-triangle"></i> Your Logo has a size of ' + filesize + 'MB ! IT EXCEEDS THE FILESIZE LIMIT OF 2MB ! YOU WILL NOT BE ABLE TO SUBMIT THIS FORM <i class="fas fa-exclamation-triangle"></i>')
+          $('#help_filesize').html('<i class="fas fa-exclamation-triangle"></i> Your Image has a size of ' + filesize + 'MB ! IT EXCEEDS THE FILESIZE LIMIT OF 5MB ! YOU WILL NOT BE ABLE TO SUBMIT THIS FORM <i class="fas fa-exclamation-triangle"></i>')
           //style the warning as warning
           $('#help_filesize').removeClass('alert alert-success').addClass('alert alert-danger');
         } else { //filesize is small enough
           //re-enable the submit button in case it got disabled
           $('#formSubmit').prop('disabled', false);
           //add hint with the filesize
-          $('#help_filesize').html('<i class="far fa-check-circle"></i> Your Logo has a size of ' + filesize + 'MB <i class="far fa-check-circle"></i>');
+          $('#help_filesize').html('<i class="far fa-check-circle"></i> Your Image has a size of ' + filesize + 'MB <i class="far fa-check-circle"></i>');
           //style hint as success
           $('#help_filesize').removeClass('alert alert-danger').addClass('alert alert-success');
         }

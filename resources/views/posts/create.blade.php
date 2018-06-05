@@ -30,11 +30,13 @@
           <input type="text" class="form-control" id="title" name="title" value="{{ old('name') }}" placeholder="Why loneliness is rising in a time of social networks">
         </div>
 
-        {{-- <div class="custom-file">
-          <input type="file" class="custom-file-input" id="lead_img" name="lead_img" value="{{ old('lead_img')}}">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input imgInput" id="lead_img" name="lead_img" value="{{ old('lead_img')}}">
           <label class="custom-file-label" for="lead_img">Upload a Title Image</label>
-          <small id="lead_img_help" class="form-text text-muted">The maximum filesize is 2MB | possible formats are JPG and PNG </small><div id="help_filetype"></div><div id="help_filesize"></div>
-        </div> --}}
+          <small id="lead_img_help" class="form-text text-muted">The maximum filesize is 5MB | possible formats are JPG and PNG </small><div id="help_filetype"></div><div id="help_filesize"></div>
+        </div>
+
+        <hr>
 
         {{-- <div class="form-group">
           <label for="body">Short Summary of what to expect</label>

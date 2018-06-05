@@ -13,3 +13,4 @@ yarn-error.log
 .env
 /logs
 logs/example.local.access.log
+logs/example.local.access.log
