@@ -26,9 +26,10 @@ class CreateOrganizationsTable extends Migration
             $table->string('street')->nullable(true);
             $table->string('street_number', 7)->nullable(true);
             $table->string('donate_link', 2083)->nullable(true);
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->unique();
+            $table->integer('user_id')->unsigned(); //1..n relation   //->unique(); if 1 to 0..1 relation
+            $table->foreign('user_id')->references('id')->on('users');
             $table->text('sponsor_message')->nullable(true);
+            $table->string('logo')->nullable(true);
             $table->timestamps();
         });
     }

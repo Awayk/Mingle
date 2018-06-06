@@ -9,7 +9,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-7 align-self-center">
-            <h1 class="display-4">Join MingleNet</h1>
+            <h1 class="display-4 text-md-center">Join MingleNet</h1>
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
