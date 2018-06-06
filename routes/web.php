@@ -16,6 +16,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/organizations2/{organization}', 'OrganizationsController@show2');
+
 //CRUD routes for everything regarding the Organization
 Route::resource('organizations', 'OrganizationsController');
 

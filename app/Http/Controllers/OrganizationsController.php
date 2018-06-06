@@ -211,4 +211,10 @@ class OrganizationsController extends Controller
     {
         //
     }
+
+    public function show2(Organization $organization)
+    {
+        return view('organizations.show2', compact('organization'));
+    }
+
 }
