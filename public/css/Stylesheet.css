@@ -47,7 +47,37 @@ html, body {
   height: 100%;
 }
 
+/* Latest Posts Carousel for the welcome page*/
 
+#welcomePostsCarousel .carousel-item {
+}
+
+#welcomePostsCarousel .carousel-caption {
+  text-align: center;
+  /* padding: 5em; */
+  background-color: rgba(65, 64, 88, 0.63);
+}
+
+#welcomePostsCarousel .carousel-control-next, #welcomePostsCarousel .carousel-control-prev {
+  color: rgb(60, 60, 60);
+  /* font-size: 20pt; */
+  top: 0;
+  bottom: 0;
+}
+@media screen and (max-width: 767px) {
+  /* Do not Hide captions */
+  #welcomePostsCarousel .carousel-caption {
+      display: block !important;
+  }
+}
+.welcomePostsCarouselImg {
+  min-height: 250px;
+}
+
+/* Image upload preview  */
+#imgUploadPreview {
+  height: 500px;
+}
 
 /* Complete Stylesheet for Welcome Page (Bootstrap Code) */
 
@@ -123,47 +153,47 @@ body {
 
 
 /* Scrolled Navbar Design */
-#outerNavbar.scrolled {
+#outerNavbar.scrolled, #outerNavbar.expanded  {
   background-color: white;
   border-bottom: 1pt solid rgb(16,54,91);
   color: rgb(100, 100, 100);
 }
 
-#navBar.scrolled {
+#navBar.scrolled, #navBar.expanded {
   background: transparent;
   color: rgb(100, 100, 100);
   border: none;
 }
 
-#navBar.scrolled .nav-link {
+#navBar.scrolled .nav-link, #navBar.expanded .nav-link {
   color: rgb(100, 100, 100);
 }
 
-#navBar.scrolled .nav-link:hover {
+#navBar.scrolled .nav-link:hover, #navBar.expanded .nav-link:hover {
   color: black;
 }
 
-#searchButton.scrolled {
+#searchButton.scrolled, #searchButton.expanded {
   background-color: transparent;
   color: rgb(100, 100, 100);
   border: none;
 }
 
-#searchButton.scrolled:hover {
+#searchButton.scrolled:hover, #searchButton.expanded:hover {
   color: black;
 }
 
-#navToggler.scrolled {
+#navToggler.scrolled, #navToggler.expanded {
   color: rgb(100, 100, 100);
 }
 
-#loginButton.scrolled {
+#loginButton.scrolled, #loginButton.expanded {
   background-color: transparent;
   color: rgb(100, 100, 100);
   border: none;
 }
 
-#loginButton.scrolled:hover {
+#loginButton.scrolled:hover, #loginButton.expanded:hover {
   color: black;
 }
 
@@ -183,13 +213,13 @@ body {
 }
 
 /* Legacy: Top Carousel Design */
-.carousel-caption {
+/* .carousel-caption {
   text-align: left;
   right: auto;
   left: 6%;
   top:50%;
   transform: translateY(-50%);
-}
+} */
 
 #captionContainer {
   vertical-align: middle;
@@ -377,7 +407,7 @@ font-size: 14pt;
   padding-right: 20%;
 }
 
-.carousel-item {
+.postsCarousel {
   padding-left: 11%;
   padding-right: 11%;
 }

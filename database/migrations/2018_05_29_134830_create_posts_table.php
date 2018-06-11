@@ -18,10 +18,13 @@ class CreatePostsTable extends Migration
             $table->string('title');
             // $table->string('lead_description'); in case a specified short summary is wanted
             $table->longText('body');
-            // $table->string('multimedia'); in case of a specified title img
+            $table->string('lead_img')->nullable(true); //in case of a specified title img is wanted
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')
                   ->on('users')->onDelete('cascade');
+            $table->string('organization_name')->nullable(true);
+            $table->foreign('organization_name')->references('name')
+                  ->on('organizations');
             $table->timestamps();
         });
     }

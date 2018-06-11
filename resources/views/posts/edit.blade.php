@@ -9,7 +9,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-7 align-self-center">
-          <h1 class="display-4">All the Organizations currently participating</h1>
+          <h1 class="display-4">Edit Post</h1>
         </div>
         <div class="col-md-5">
         </div>
@@ -20,20 +20,26 @@
 
 <section id="section2">
   <div class="container">
-    <h1>Write your new post</h1>
+    <h1>Edit Post</h1>
 
-    <form class="" action="/posts" method="post" enctype="multipart/form-data">
+    <form class="" action="/posts/{{ $post->id }}" method="post" enctype="multipart/form-data">
+
+      @method('PATCH')
       {{ csrf_field() }}
 
       <div class="form-group">
         <label for="title">Title of your post</label>
-        <input type="text" class="form-control" id="title" name="title" value="{{ old('name') }}" placeholder="Why loneliness is rising in a time of social networks">
+        <input type="text" class="form-control" id="title" name="title" value="{{ $post->title }}" placeholder="Why loneliness is rising in a time of social networks">
       </div>
 
+      @if ($post->lead_img != "")
+        <img id="imgUploadPreview" class="img img-fluid" src="{{asset('storage/'.$post->lead_img)}}" alt="">
+      @endif
+
       <div class="custom-file">
-        <input type="file" class="custom-file-input imgInput" id="lead_img" name="lead_img" value="{{ old('lead_img')}}">
-        <label class="custom-file-label" for="lead_img">Upload a Title Image</label>
-        <small id="lead_img_help" class="form-text text-muted">The maximum filesize is 5MB | possible formats are JPG and PNG </small>
+        <input type="file" class="custom-file-input imgInput" id="lead_img" name="lead_img" >
+        <label class="custom-file-label" for="lead_img">{{ $post->lead_img }}</label>
+        <small id="lead_img_help" class="form-text text-muted">The maximum filesize is 5MB | possible formats are JPG and PNG | The image will be resized and cropped to 1500px*500px</small>
         <div id="help_filetype"></div>
         <div id="help_filesize"></div>
       </div>
@@ -47,7 +53,7 @@
 
       <div class="form-group">
         <label for="body">Post Body</label>
-        <textarea class="form-control summernote" id="body" name="body" value="{{ old('body') }}"></textarea>
+        <textarea class="form-control summernote" id="body" name="body">{!! $post->body !!}</textarea>
       </div>
 
       <div class="form-group">
@@ -83,6 +89,12 @@
   </div>
 
 </section>
+
+
+@endsection
+
+@section('pageJS')
+
 
 
 @endsection

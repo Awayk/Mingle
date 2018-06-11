@@ -34,7 +34,7 @@ class ServicesController extends Controller
      */
     public function create(Organization $organization)
     {
-        if (Gate::denies('edit-organization', $organization)) {
+        if (Gate::denies('edit-owner', $organization)) {
             return redirect('/organizations/'. $organization->name);
         }
 
@@ -81,7 +81,7 @@ class ServicesController extends Controller
      */
     public function edit(Organization $organization, Service $service)
     {
-        if (Gate::denies('edit-organization', $organization)) {
+        if (Gate::denies('edit-owner', $organization)) {
             return redirect('/organizations/'. $organization->name);
         }
 

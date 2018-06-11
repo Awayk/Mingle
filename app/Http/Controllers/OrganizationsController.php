@@ -14,7 +14,7 @@ class OrganizationsController extends Controller
 
       public function __construct()
       {
-        $this->middleware('auth')->except(['index', 'show']);
+        $this->middleware('auth')->except(['index', 'show', 'show2']);
       }
 
     /**
@@ -52,7 +52,7 @@ class OrganizationsController extends Controller
         $this->validate(request(), [
             'name' => 'required|string|max:255|unique:organizations',
             'mail' => 'email|max:255|unique:organizations',
-            'logo' => 'image|mimes:jpeg,png|max:2000'
+            'logo' => 'image|mimes:jpeg,png|max:5000'
         ]);
 
         $path = "";
@@ -121,7 +121,7 @@ class OrganizationsController extends Controller
      */
     public function edit(Organization $organization)
     {
-        if (Gate::denies('edit-organization', $organization)) {
+        if (Gate::denies('edit-owner', $organization)) {
             return redirect('/organizations/'. $organization->name);
         }
 
@@ -191,8 +191,8 @@ class OrganizationsController extends Controller
           'street_number' => $input['street_number'],
           'donate_link' => $input['donate_link'],
           'sponsor_message' => $input['sponsor_message'],
-          'logo' => $path,
-          'user_id' => auth()->id()
+          'logo' => $path
+          // 'user_id' => auth()->id()
         ]);
 
 

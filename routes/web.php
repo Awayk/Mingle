@@ -12,9 +12,7 @@
 */
 
 //Route to the welcome page
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@welcome')->name('home');
 
 
 Route::get('/organizations2/{organization}', 'OrganizationsController@show2');
@@ -30,10 +28,6 @@ Route::resource('posts', 'PostsController');
 // auth Routes
 Auth::routes();
 
-//  route user gets redirected too after login
-Route::get('/home', function (){
-    return view('welcome');
-})->name('home');
 
 
 Route::get('/minglenet', function () {
