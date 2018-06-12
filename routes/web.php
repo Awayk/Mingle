@@ -24,6 +24,9 @@ Route::resource('organizations/{organization}/services', 'ServicesController');
 
 Route::resource('posts', 'PostsController');
 
+Route::resource('sponsors', 'SponsorsController');
+
+
 
 // auth Routes
 Auth::routes();
