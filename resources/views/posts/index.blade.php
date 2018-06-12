@@ -26,7 +26,9 @@
     @foreach ($posts as $post)
     <div class="row">
       <div class="card text-center w-100">
-        {{-- <img class="card-img-top" src="{{asset('img/sunsetLonelyTree.jpg')}}" alt="Card image cap"> --}}
+        @if ($post->lead_img != "")
+          <img class="card-img-top" src="{{ asset('storage/'.$post->lead_img) }}" alt="Title Image">
+        @endif
         <div class="card-body">
           <h3 class="card-title">{{ $post->title }}</h3>
           <!-- For the text preview: 1. take the $post->body | 2. delete everything between table tags to avoid display problems | 3. strip all html tags to get plain text | 4. exchange whitespace code with whitespace | 5. take the first 400 characters  -->
@@ -34,7 +36,12 @@
           <a href="/posts/{{$post->id}}" class="btn btn-outline-primary">Read the full Post</a>
         </div>
         <div class="card-footer text-muted">
-          {{ $post->user->name }} | {{ $post->created_at->diffForHumans() }}
+          @if ($post->organization_name == "0" || $post->organization_name == null ||  $post->organization_name == "")
+            {{ $post->user->name }}
+          @else
+            {{ $post->organization_name }}
+          @endif
+           | {{ $post->created_at->diffForHumans() }}
         </div>
       </div>
     </div>

@@ -38,8 +38,10 @@
 
   <!-- summernote JS -->
   <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.10/summernote.js"></script>
-  <!-- clean the text pasted into summernote -->
-  {{-- <script src="{{asset('js/summernote-cleaner.js')}}"></script> --}}
+
+  <!-- jQuery UI -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
   <script src="{{asset('js/script.js')}}" charset="utf-8"></script>
 
   @yield('pageJS')

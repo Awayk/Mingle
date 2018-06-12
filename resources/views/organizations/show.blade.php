@@ -70,7 +70,7 @@
 
             <div class="col-6">
               @if ($organization->logo !== "")
-                <img src="{{asset("storage/$organization->logo")}}" class="img img-fluid" />
+                <img src="{{asset('storage/'.$organization->logo)}}" class="img img-fluid" />
               @endif
               {{-- Exchange the img by a placeholder <img src="{{asset("storage/$organization->logo")}}" onerror="this.onerror=null;this.src='{{asset("img/MLetterLogo.png")}}';" class="img img-fluid" /> --}}
             </div>

@@ -30,9 +30,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function organization()
+    public function organizations()
     {
-      return $this->hasOne(Organization::class);
+      return $this->hasMany(Organization::class);
     }
 
     public function sponsors()
