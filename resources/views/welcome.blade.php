@@ -8,6 +8,30 @@
 @section('content')
 
 
+<div class="modal fade" tabindex="-1" role="dialog" id="choosePageMode">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title justify-content-center">Choose Page-Mode</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body text-center">
+        <p>Welcome to Mingle. Our team is always looking to provide the best experience for users visiting our site.
+          Since we don't want to save any of your personal data, this will require you to choose a Mode for the Webpage upon first arrival.<br><br>
+          The Standard-Mode will be the choice to go if you are looking to explore the platform and learn more about it as well as loneliness and organizations working against it.<br>
+          If you are looking for help for yourself or someone else, you should choose the Mingle-Mode to be guided through the platform and find a suitable organization or partner.</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-dark">Standard-Mode</button>
+        <button type="button" class="btn btn-dark">Mingle-Mode</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
   <!-- Network Promotion Section: Promotion of MingleNet & Possibility to join Network / New responsive Version -->
   <section id="mingleNetSection">
     <div class="container-fluid" id="mingleNetContainer">
@@ -113,24 +137,24 @@
     <hr id="headingRuler">
   <div class="row my-5">
     <div class="col-md-3 text-center">
-      <a href="#"><span class="fab fa-twitter fa-5x mb-2" id="twitterLink"></span></a>
+      <a href="https://twitter.com/projectmingle"><span class="fab fa-twitter-square fa-5x mb-2" id="twitterLink"></span></a>
       <h5 id="socialMediaHeader">Twitter</h5>
-      <a href="#">Follow us on Twitter</a>
+      <a href="https://twitter.com/projectmingle">Follow us on Twitter</a>
     </div>
     <div class="col-md-3 text-center">
-      <a href="#"><span class="fab fa-facebook fa-5x mb-2" id="facebookLink"></span></a>
+      <a href="https://www.facebook.com/projectmingle"><span class="fab fa-facebook-square fa-5x mb-2" id="facebookLink"></span></a>
       <h5 id="socialMediaHeader">Facebook</h5>
-      <a href="#">Like us on Facebook</a>
+      <a href="https://www.facebook.com/projectmingle">Like us on Facebook</a>
     </div>
     <div class="col-md-3 text-center">
-      <a href="#"><span class="fab fa-instagram fa-5x mb-2" id="instagramLink"></span></a>
+      <a href="https://www.instagram.com/projectmingle/?hl=de"><span class="fab fa-instagram fa-5x mb-2" id="instagramLink"></span></a>
       <h5 id="socialMediaHeader">Instagram</h5>
-      <a href="#">Check us out on Instagram</a>
+      <a href="https://www.instagram.com/projectmingle/?hl=de">Check us out on Instagram</a>
     </div>
     <div class="col-md-3 text-center">
-      <a href="#"><span class="fab fa-reddit-square fa-5x mb-2" id="redditLink"></span></a>
-      <h5 id="socialMediaHeader">Reddit</h5>
-      <a href="#">Read about us on Reddit</a>
+      <a href="#"><span class="fab fa-snapchat-square fa-5x mb-2" id="snapchatLink"></span></a>
+      <h5 id="socialMediaHeader">Snapchat</h5>
+      <a href="#">Find us on Snapchat</a>
     </div>
   </div>
 </div>
