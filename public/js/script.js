@@ -1,3 +1,9 @@
+
+      // Modal-Popup for Choice of Page-Mode (Welcome-Page only)
+      $(window).on('load',function(){
+        $('#choosePageMode').modal('show');
+    });
+
 $(function() {
 
   // JavaScript (JQuery) Code for Navbar Changes on scroll
