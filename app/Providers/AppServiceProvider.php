@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
+use Illuminate\Support\Facades\View;
+use App\Organization;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -14,6 +17,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        $organizationNames = Organization::orderBy('updated_at', 'desc')->get(['name']);
+
+        View::share('organizationNames', $organizationNames);
+
         Schema::defaultStringLength(191);
     }
 
