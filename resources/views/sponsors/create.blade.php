@@ -40,38 +40,13 @@
 
       <hr>
 
-      <div class="">
-        <select class="form-control col-6" name="icon_id" id='icon_id'>
-          @php
-            $files = Storage::disk('public')->allFiles('logos\sponsors');
-          @endphp
 
-          @foreach ($files as $file)
-            <option data-img-src="{{asset('storage/'.$file)}}" value="{{ $file }}">{{ $file }}</option>
-            <option value="{{ $file }}">
-              {{ $file }}
-            </option>
-          @endforeach
-        </select>
-      </div>
 
       <div class="form-group">
-        <div class="form-check">
+        <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
           <label class="form-check-label" for="exampleRadios1">
             <img src="http://local.mingle.eu/storage/logos/sponsors/aperture.png" alt="">
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-          <label class="form-check-label" for="exampleRadios2">
-            Second default radio
-          </label>
-        </div>
-        <div class="form-check disabled">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
-          <label class="form-check-label" for="exampleRadios3">
-            Disabled radio
           </label>
         </div>
       </div>

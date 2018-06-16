@@ -21,10 +21,10 @@
       <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-xs-3">
         <ul>
           <h6 id="footerHeader">Social Media</h6><br>
-          <a href="#" class="mb-3" id="footerLink"><span class="fab fa-twitter fa-lg mr-2" id="twitterLink"></span>Twitter</a><br>
-          <a href="#" class="mb-3" id="footerLink"><span class="fab fa-facebook fa-lg mr-2" id="facebookLink"></span>Facebook</a><br>
-          <a href="#" class="mb-3" id="footerLink"><span class="fab fa-instagram fa-lg mr-2" id="instagramLink"></span>Instagram</a><br>
-          <a href="#" class="mb-3" id="footerLink"><span class="fab fa-reddit-square fa-lg mr-2" id="redditLink"></span>Reddit</a>
+          <a href="https://twitter.com/projectmingle" class="mb-3" id="footerLink"><span class="fab fa-twitter-square fa-lg mr-2" id="twitterLink"></span>Twitter</a><br>
+          <a href="https://www.facebook.com/projectmingle" class="mb-3" id="footerLink"><span class="fab fa-facebook-square fa-lg mr-2" id="facebookLink"></span>Facebook</a><br>
+          <a href="https://www.instagram.com/projectmingle/?hl=de" class="mb-3" id="footerLink"><span class="fab fa-instagram fa-lg mr-2" id="instagramLink"></span>Instagram</a><br>
+          <a href="#" class="mb-3" id="footerLink"><span class="fab fa-snapchat-square fa-lg mr-2" id="snapchatLink"></span>Snapchat</a>
         </ul>
       </div>
     </div>
@@ -35,10 +35,10 @@
       <small>© 2018 Mingle, All Rights Reserved.</small>
     </div>
     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-7 col-xs-5 text-center">
-      <a href="#" id="footerLink"><span class="fab fa-twitter fa-lg mr-2"></span></a>
-      <a href="#" id="footerLink"><span class="fab fa-facebook fa-lg mr-2"></span></a>
-      <a href="#" id="footerLink"><span class="fab fa-instagram fa-lg mr-2"></span></a>
-      <a href="#" id="footerLink"><span class="fab fa-reddit-square fa-lg mr-2"></span></a>
+      <a href="https://twitter.com/projectmingle" id="footerLink"><span class="fab fa-twitter-square fa-lg mr-2"></span></a>
+      <a href="https://www.facebook.com/projectmingle" id="footerLink"><span class="fab fa-facebook-square fa-lg mr-2"></span></a>
+      <a href="https://www.instagram.com/projectmingle/?hl=de" id="footerLink"><span class="fab fa-instagram fa-lg mr-2"></span></a>
+      <a href="#" id="footerLink"><span class="fab fa-snapchat-square fa-lg mr-2"></span></a>
     </div>
   </div>
 </div>
