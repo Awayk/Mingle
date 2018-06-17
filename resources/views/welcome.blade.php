@@ -15,15 +15,15 @@
       <h5 class="modal-title justify-content-center">Choose Page-Mode</h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
-      <div class="modal-body text-center">
+      <div class="modal-body">
         <p>Welcome to Mingle. Our team is always looking to provide the best experience for users visiting our site.
           Since we don't want to save any of your personal data, this will require you to choose a Mode for the Webpage upon first arrival.<br><br>
           The Standard-Mode will be the choice to go if you are looking to explore the platform and learn more about it as well as loneliness and organizations working against it.<br>
           If you are looking for help for yourself or someone else, you should choose the Mingle-Mode to be guided through the platform and find a suitable organization or partner.</p>
       </div>
       <div class="modal-footer justify-content-center">
-        <button type="button" class="btn btn-dark">Standard-Mode</button>
-        <button type="button" class="btn btn-dark">Mingle-Mode</button>
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Standard-Mode</button>
+        <button type="button" class="btn btn-dark" href="#">Mingle-Mode</button>
       </div>
     </div>
 

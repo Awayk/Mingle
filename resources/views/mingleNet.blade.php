@@ -18,6 +18,19 @@
   </div>
 </section>
 
+<section id="infoSection10">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-12 text-center" id="textualColumn">
+        <h3 class="text-center">Our Ambitions</h3>
+        <hr id="headingRuler">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="infoSection11">
   <div class="container py-5">
     <div class="row justify-content-center">
@@ -41,15 +54,17 @@
     <div class="carousel slide" id="infoCarousel" data-slide="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active text-center">
-          <h3>Headline</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <h4>July 18th 2018 - Beta-Test of Mingle</h4>
+          <p>The BETA-launch of our platform is planned for mid of July and will test the capacities as well as the first functionalities under live-circumstances. The Beta will only be available to a few selected users and our partner organizations.<br><br>
+            You are interested in joining the Beta?<br> </p>
+            <button type="button" class="btn btn-dark">Apply here!</button>
         </div>
         <div class="carousel-item text-center">
-          <h3>Headline 2</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <h4>Spring 2018 - Official Platform-Launch</h4>
+          <p>In this years fall the time has come. Our platform will, after months of coding and extensive testing, finally go live and </p>
         </div>
         <div class="carousel-item text-center">
-          <h3>Headline 3</h3>
+          <h4>Spring 2019 - </h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
       </div>
