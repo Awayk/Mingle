@@ -1,7 +1,3 @@
-
-
-
-
 <!-- Navigation Bar including Search Form -->
 <div class="container-fluid fixed-top" id="outerNavbar">
   <div class="d-flex flex-row justify-content-end">
@@ -16,13 +12,9 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="organization-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Organizations<span class="caret"></span></a>
               <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                <a class="dropdown-item" href="/organizations/silbernetz">Silbernetz</a>
-                <a class="dropdown-item" href="#">Organization 2</a>
-                <a class="dropdown-item" href="#">Organization 3</a>
-                <a class="dropdown-item" href="#">Organization 4</a>
-                <a class="dropdown-item" href="#">Organization 5</a>
-                <a class="dropdown-item" href="#">Organization 6</a>
-                <a class="dropdown-item" href="#">Organization 7</a>
+                @foreach ($organizationNames as $orgName)
+                  <a class="dropdown-item" href="/organizations/{{$orgName->name}}">{{ $orgName->name }}</a>
+                @endforeach
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/organizations">Overview</a>
               </div>

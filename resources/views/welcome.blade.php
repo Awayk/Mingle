@@ -49,6 +49,109 @@
     </div>
   </section>
 
+  <section>
+    <div class="container">
+
+
+      {{-- <div class="card-deck">
+        @foreach ($posts as $post)
+          <div class="card text-center">
+            @if ($post->lead_img != "")
+              <img class="card-img-top" src="{{ asset('storage/'.$post->lead_img) }}" alt="Title Image">
+            @endif
+            <div class="card-body">
+              <h3 class="card-title">{{ $post->title }}</h3>
+              <!-- For the text preview: 1. take the $post->body | 2. delete everything between table tags to avoid display problems | 3. strip all html tags to get plain text | 4. exchange whitespace code with whitespace | 5. take the first 400 characters  -->
+              <p class="card-text">{{ str_limit(str_replace("&nbsp;", ' ', strip_tags(preg_replace('#(<table.*?>).*?(</table>)#', '$1$2', $post->body))), 400) }}</p>
+              <a href="/posts/{{$post->id}}" class="btn btn-outline-primary">Read the full Post</a>
+            </div>
+            <div class="card-footer text-muted">
+              @if ($post->organization_name == "0" || $post->organization_name == null ||  $post->organization_name == "")
+                {{ $post->user->name }}
+              @else
+                {{ $post->organization_name }}
+              @endif
+               | {{ $post->created_at->diffForHumans() }}
+            </div>
+          </div>
+        @endforeach
+      </div> --}}
+
+      {{-- <div class="card-columns">
+        @foreach ($posts as $post)
+          <div class="card text-center">
+            @if ($post->lead_img != "")
+              <img class="card-img-top" src="{{ asset('storage/'.$post->lead_img) }}" alt="Title Image">
+            @endif
+            <div class="card-body">
+              <h3 class="card-title">{{ $post->title }}</h3>
+              <!-- For the text preview: 1. take the $post->body | 2. delete everything between table tags to avoid display problems | 3. strip all html tags to get plain text | 4. exchange whitespace code with whitespace | 5. take the first 400 characters  -->
+              <p class="card-text">{{ str_limit(str_replace("&nbsp;", ' ', strip_tags(preg_replace('#(<table.*?>).*?(</table>)#', '$1$2', $post->body))), 200) }}</p>
+              <a href="/posts/{{$post->id}}" class="btn btn-outline-primary">Read the full Post</a>
+            </div>
+            <div class="card-footer text-muted">
+              @if ($post->organization_name == "0" || $post->organization_name == null ||  $post->organization_name == "")
+                {{ $post->user->name }}
+              @else
+                {{ $post->organization_name }}
+              @endif
+               | {{ $post->created_at->diffForHumans() }}
+            </div>
+          </div>
+        @endforeach
+
+      </div> --}}
+    </div>
+  </section>
+
+  <section>
+    <div id="welcomePostsCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#welcomePostsCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#welcomePostsCarousel" data-slide-to="1"></li>
+        <li data-target="#welcomePostsCarousel" data-slide-to="2"></li>
+        <li data-target="#welcomePostsCarousel" data-slide-to="3"></li>
+        <li data-target="#welcomePostsCarousel" data-slide-to="4"></li>
+        <li data-target="#welcomePostsCarousel" data-slide-to="5"></li>
+      </ol>
+      <div class="carousel-inner">
+        @foreach ($posts as $post)
+          @php
+            $path = "";
+            $preset = [];
+            if ($post->lead_img != ""){
+              $path = $post->lead_img;
+            } else { //take one of the preset images at a random basis !could create topic img disruption
+              for ($i=1; $i < 7; $i++) {
+                $number = str_pad((string)$i, 2, "0", 0);
+                array_push($preset, 'postImg/preset/'.$number.'.jpg');
+              }
+              $path =  $preset[rand(0, 5)];
+            }
+          @endphp
+          <div class="carousel-item">
+            <img class="d-block w-100 welcomePostsCarouselImg" src="{{asset('storage/'.$path)}}" alt="slide Image">
+            <a href="/posts/{{ $post->id }}">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>{{ $post->title }}</h5>
+                <p class="d-none d-sm-block">{{ str_limit(str_replace("&nbsp;", ' ', strip_tags(preg_replace('#(<table.*?>).*?(</table>)#', '$1$2', $post->body))), 200) }}</p>
+              </div>
+            </a>
+          </div>
+
+        @endforeach
+      </div>
+      <a class="carousel-control-prev" href="#welcomePostsCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#welcomePostsCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+
   <!-- Informative Section: Text & Picture -->
   <section id="infoSection1">
     <div class="container py-5">
@@ -161,4 +264,11 @@
 </section>
 
 
+@endsection
+
+
+@section('pageJS')
+  <script>
+    $('#welcomePostsCarousel').find('.carousel-item').first().addClass('active');
+  </script>
 @endsection

@@ -18,9 +18,9 @@
   </div>
 </section>
 
+
 <section id="section2">
   <div class="container">
-    <h1>Write your new post</h1>
 
     <form class="" action="/sponsors" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}
@@ -30,7 +30,15 @@
         <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" placeholder="Why loneliness is rising in a time of social networks">
       </div>
 
-      <div class="custom-file">
+      <div class="form-group">
+        <span class="switch">
+          <span id="switchLabelBefore">Upload Sponosor Logo</span>
+          <input type="checkbox" class="switch" id="switchLogoIcon" name="switchLogoIcon">
+          <label for="switchLogoIcon">Use a generic icon</label>
+        </span>
+      </div>
+
+      <div class="custom-file" id="logoUpload">
         <input type="file" class="custom-file-input imgInput" id="logo" name="logo" value="{{ old('logo')}}">
         <label class="custom-file-label" for="logo">Upload a Logo for your sponsor</label>
         <small id="logo_help" class="form-text text-muted">The maximum filesize is 5MB | possible formats are JPG and PNG </small>
@@ -40,39 +48,22 @@
 
       <hr>
 
-      <div class="">
-        <select class="form-control col-6" name="icon_id" id='icon_id'>
-          @php
-            $files = Storage::disk('public')->allFiles('logos\sponsors');
+
+
+      <div class="form-group" id="iconSelection">
+        <div class="form-check ">
+          @php $icons = Storage::disk('public')->allFiles('logos\sponsors\icons');
           @endphp
 
-          @foreach ($files as $file)
-            <option data-img-src="{{asset('storage/'.$file)}}" value="{{ $file }}">{{ $file }}</option>
-            <option value="{{ $file }}">
-              {{ $file }}
-            </option>
-          @endforeach
-        </select>
-      </div>
+          @foreach ($icons as $icon)
 
-      <div class="form-group">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-          <label class="form-check-label" for="exampleRadios1">
-            <img src="http://local.mingle.eu/storage/logos/sponsors/aperture.png" alt="">
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-          <label class="form-check-label" for="exampleRadios2">
-            Second default radio
-          </label>
-        </div>
-        <div class="form-check disabled">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
-          <label class="form-check-label" for="exampleRadios3">
-            Disabled radio
-          </label>
+          <label class="form-check-label iconRadios" for="icon{{$loop->index}}">
+                <input class="form-check-input" type="radio" name="icon" id="icon{{$loop->index}}" value="{{ $icon }}">
+                <img src="{{asset('storage/'.$icon)}}" alt="">
+              </label>
+
+          @endforeach
+
         </div>
       </div>
 
@@ -92,21 +83,35 @@
 
 </section>
 
-<section id="section3">
-  @php
-    $files = Storage::disk('public')->allFiles('logos\sponsors');
-  @endphp
-
-  @foreach ($files as $file)
-
-    <img src="{{asset('storage/'.$file)}}" alt="">
-
-    {{ (string)$file }}
-
-  @endforeach
 
 
-</section>
+@endsection
+
+@section('pageJS')
+
+<script>
+  $(function() {
+    $("#switchLabelBefore").click(function(){$("#switchLogoIcon").click(); return false;});
+
+    toggleFields(); //call this first so we start out with the correct visibility depending on the selected form values
+    //this will call our toggleFields function every time the selection value of our underAge field changes
+    $("#switchLogoIcon").change(function () {
+        toggleFields();
+    });
+
+  });
+
+  function toggleFields() {
+      if ($("#switchLogoIcon").prop("checked")) {
+        $("#iconSelection").show();
+        $("#logoUpload").hide();
+      }
+      else {
+        $("#iconSelection").hide();
+        $("#logoUpload").show();
+      }
+  }
+</script>
 
 
 @endsection

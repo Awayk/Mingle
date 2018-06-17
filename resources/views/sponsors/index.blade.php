@@ -19,13 +19,25 @@
 </section>
 
 <section id="section2">
-  @foreach ($sponsors as $sponsor)
-    <div class="">
-      <img class="img img-fluid" src="{{asset('/storage/'.$sponsor->logo)}}" alt="">
-      <h4>{{ $sponsor->name }}</h4>
+  <div class="container-fluid">
+    <div class="d-flex flex-wrap">
+      @foreach ($sponsors as $sponsor)
+        <figure class="figure p-2">
+          <img src="{{asset('/storage/'.$sponsor->logo)}}" class="figure-img img-fluid rounded sponsorLogo" alt="{{ $sponsor->name }}">
+          <figcaption class="figure-caption text-center sponsorLogoCaption">{{ $sponsor->name }}</figcaption>
+        </figure>
+
+      @endforeach
     </div>
 
-  @endforeach
+    <div class="row">
+      <a href="sponsors/create" class="btn btn-outline-primary">Create new Sponsor</a>
+    </div>
+  </div>
+
+
+
+
 </section>
 
 
