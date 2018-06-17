@@ -135,7 +135,7 @@
           <p>{{ $message}}</p>
         @endforeach
 
-        <h3>Our top Sponsors</h3>
+        <h3>Our Sponsors</h3>
         <hr>
         <div class="row text-center">
           <figure class="figure col-md-2">
