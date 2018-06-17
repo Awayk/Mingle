@@ -111,11 +111,6 @@
         <li data-target="#welcomePostsCarousel" data-slide-to="1"></li>
         <li data-target="#welcomePostsCarousel" data-slide-to="2"></li>
         <li data-target="#welcomePostsCarousel" data-slide-to="3"></li>
-<<<<<<< HEAD
-        <li data-target="#welcomePostsCarousel" data-slide-to="4"></li>
-        <li data-target="#welcomePostsCarousel" data-slide-to="5"></li>
-=======
->>>>>>> b316222e4d62b264e2a3ec7e66503414d6729ca5
       </ol>
       <div class="carousel-inner">
         @foreach ($posts as $post)
