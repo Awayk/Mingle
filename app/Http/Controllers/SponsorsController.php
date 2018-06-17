@@ -51,27 +51,30 @@ class SponsorsController extends Controller
 
       $path = "";
 
+      if (request('switchLogoIcon')) {
+        $path = request('icon');
+      } else {
+        if ($request->hasFile('logo')) {
+           $logo = $request->file('logo');
+           $filename = strtolower(request('name').'.'.$logo->getClientOriginalExtension());
+          //delete old file, if it exists
+           if (Storage::disk('public')->exists($filename)) {
+             Storage::disk('public')->delete('logos/sponsors/'.$filename);
+           }
 
-      if ($request->hasFile('logo')) {
-         $logo = $request->file('logo');
-         $filename = strtolower(request('name').'.'.$logo->getClientOriginalExtension());
-        //delete old file, if it exists
-         if (Storage::disk('public')->exists($filename)) {
-           Storage::disk('public')->delete('logos/sponsors/'.$filename);
+           $logo_resize = Image::make($logo->getRealPath());
+           //resize if wanted/necessary
+           $logo_resize->fit(200, 200);
+
+           $path = 'logos/sponsors/' .$filename;
+
+           //store new file in public/logos/sponsors/$name
+           $logo_resize->save(
+             public_path('storage/'.$path)
+             // 'logos', $name , 'public'
+           );
          }
-
-         $logo_resize = Image::make($logo->getRealPath());
-         //resize if wanted/necessary
-         // $logo_resize->resize(500, 500);
-
-         $path = 'logos/sponsors/' .$filename;
-
-         //store new file in public/logos/sponsors/$name
-         $logo_resize->save(
-           public_path('storage/'.$path)
-           // 'logos', $name , 'public'
-         );
-       }
+      }
 
        // dd($path);
 
