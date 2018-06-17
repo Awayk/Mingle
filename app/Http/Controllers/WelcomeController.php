@@ -12,7 +12,7 @@ class WelcomeController extends Controller
       public function welcome()
       {
 
-        $posts = Post::latest()->take(6)->get();
+        $posts = Post::latest()->take(4)->get();
 
         return view('welcome', compact('posts'));
       }

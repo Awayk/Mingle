@@ -38,9 +38,9 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-7 align-self-center">
-            <h1 class="display-4">Join MingleNet</h1>
-            <p>The world's first Network of Organizations commited to fighting Loneliness</p>
-            <a href="/register" class="btn btn-light btn-outline-light">Become Part of it!</a>
+            <h1 class="display-4">MingleNet</h1>
+            <p class="d-none d-sm-block">The world's first Network of Organizations commited to fighting Loneliness</p>
+            <a href="/register" class="btn btn-light btn-outline-light">Join the fight against loneliness</a>
           </div>
           <div class="col-md-5">
           </div>
@@ -111,8 +111,6 @@
         <li data-target="#welcomePostsCarousel" data-slide-to="1"></li>
         <li data-target="#welcomePostsCarousel" data-slide-to="2"></li>
         <li data-target="#welcomePostsCarousel" data-slide-to="3"></li>
-        <li data-target="#welcomePostsCarousel" data-slide-to="4"></li>
-        <li data-target="#welcomePostsCarousel" data-slide-to="5"></li>
       </ol>
       <div class="carousel-inner">
         @foreach ($posts as $post)
@@ -240,22 +238,22 @@
     <hr id="headingRuler">
   <div class="row my-5">
     <div class="col-md-3 text-center">
-      <a href="https://twitter.com/projectmingle"><span class="fab fa-twitter-square fa-5x mb-2" id="twitterLink"></span></a>
+      <a href="https://twitter.com/projectmingle" target="_blank"><span class="fab fa-twitter-square fa-5x mb-2" id="twitterLink"></span></a>
       <h5 id="socialMediaHeader">Twitter</h5>
-      <a href="https://twitter.com/projectmingle">Follow us on Twitter</a>
+      <a href="https://twitter.com/projectmingle" target="_blank">Follow us on Twitter</a>
     </div>
     <div class="col-md-3 text-center">
-      <a href="https://www.facebook.com/projectmingle"><span class="fab fa-facebook-square fa-5x mb-2" id="facebookLink"></span></a>
+      <a href="https://www.facebook.com/projectmingle" target="_blank"><span class="fab fa-facebook-square fa-5x mb-2" id="facebookLink"></span></a>
       <h5 id="socialMediaHeader">Facebook</h5>
-      <a href="https://www.facebook.com/projectmingle">Like us on Facebook</a>
+      <a href="https://www.facebook.com/projectmingle" target="_blank">Like us on Facebook</a>
     </div>
     <div class="col-md-3 text-center">
-      <a href="https://www.instagram.com/projectmingle/?hl=de"><span class="fab fa-instagram fa-5x mb-2" id="instagramLink"></span></a>
+      <a href="https://www.instagram.com/projectmingle/?hl=de" target="_blank"><span class="fab fa-instagram fa-5x mb-2" id="instagramLink"></span></a>
       <h5 id="socialMediaHeader">Instagram</h5>
-      <a href="https://www.instagram.com/projectmingle/?hl=de">Check us out on Instagram</a>
+      <a href="https://www.instagram.com/projectmingle/?hl=de" target="_blank">Check us out on Instagram</a>
     </div>
     <div class="col-md-3 text-center">
-      <a href="#"><span class="fab fa-snapchat-square fa-5x mb-2" id="snapchatLink"></span></a>
+      <a href="#" target="_blank"><span class="fab fa-snapchat-square fa-5x mb-2" id="snapchatLink"></span></a>
       <h5 id="socialMediaHeader">Snapchat</h5>
       <a href="#">Find us on Snapchat</a>
     </div>

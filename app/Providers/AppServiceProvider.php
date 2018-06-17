@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        $organizationNames = Organization::orderBy('updated_at', 'desc')->get(['name']);
+        $organizationNames = Organization::orderBy('name')->get(['name']);
 
         View::share('organizationNames', $organizationNames);
 
