@@ -44,7 +44,8 @@
                           <a class="nav-link" href="{{ route('logout') }}"
                               onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();">
-                              <button type="button" class="btn nav-item ml-2" id="logoutButton"><span class="fas fa-user fa-lg" style="color: blue"></span></button>
+                              <button type="button" class="btn nav-item ml-2" id="logoutButton"><span class="fas fa-user fa-lg"></span></button>
+                              {{-- style="color: blue" --}}
                           </a>
 
                           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

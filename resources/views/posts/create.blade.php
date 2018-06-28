@@ -9,7 +9,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-7 align-self-center">
-          <h1 class="display-4">All the Organizations currently participating</h1>
+          <h1 class="display-4">Draft a new post for the MingleNet</h1>
         </div>
         <div class="col-md-5">
         </div>

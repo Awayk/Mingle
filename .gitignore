@@ -14,3 +14,4 @@ yarn-error.log
 /logs
 logs/example.local.access.log
 logs/example.local.access.log
+*.log
